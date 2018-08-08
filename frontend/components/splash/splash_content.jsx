@@ -22,9 +22,7 @@ const SplashContent = () => {
             opening, and more, Leeway has you covered.
           </p>
           <Link className="get-started-button" to="signup">Get Started</Link>
-          <span>
-            Already using Leeway?  <Link className="signin-link" to="/signin">Sign in</Link>.
-          </span>
+          <div> Already using Leeway? <Link className="signin-link" to="/signin">Sign in</Link>.</div>
         </div>
       </div>
 

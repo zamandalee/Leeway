@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
@@ -17,15 +18,50 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  alternateAuth() {
+    if(this.props.formType === 'Sign up for') {
+      return (
+        <div className="alternate-auth">
+          Already have an account? <Link to='/login'>Sign in</Link>.
+        </div>
+      );
+    } else {
+      return (
+        <div className="alternate-auth">
+          Don't have an account? <Link to='/signup'>Sign up</Link>.
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="session-form">
         <h1>{this.props.formType} Leeway</h1>
-        <form onSumbit={this.handleSumbit}>
 
+        <form onSumbit={this.handleSumbit}>
+          <p>Enter your username and password.</p>
+          <input
+            onChange={this.update('username')}
+            value={this.state.username}
+            placeholder="hermione_granger">
+          </input>
+
+          <input
+            onChange={this.update('password')}
+            value={this.state.password}
+            placeholder="password">
+          </input>
+
+          <button>Sign up</button>
         </form>
+
+        {this.alternateAuth()}
+
       </div>
 
     );
   }
 }
+
+export default SessionForm;
