@@ -12,6 +12,12 @@ class SessionForm extends React.Component {
     this.handleSumbit = this.handleSumbit.bind(this);
   }
 
+  update(field) {
+    return e => (
+      this.setState({[field]: e.target.value})
+    );
+  }
+
   handleSumbit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -19,7 +25,7 @@ class SessionForm extends React.Component {
   }
 
   alternateAuth() {
-    if(this.props.formType === 'Sign up for') {
+    if(this.props.formType === 'Sign Up') {
       return (
         <div className="alternate-auth">
           Already have an account? <Link to='/login'>Sign in</Link>.
@@ -37,7 +43,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h1>{this.props.formType} Leeway</h1>
+        <h1>{this.props.formHeader}</h1>
 
         <form onSumbit={this.handleSumbit}>
           <p>Enter your username and password.</p>
