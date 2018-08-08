@@ -20,7 +20,7 @@ const SplashContent = () => {
           <img id="splash-illustration" src={window.images.splashpic}/>
         </div>
 
-        <div className = "text-col">
+        <div className="text-col">
           <h1>Where Work Happens</h1>
           <p>
             When your team needs to kick off a project, hire a new

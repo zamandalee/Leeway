@@ -22,7 +22,7 @@ $h1-navy: #333646;
   display: flex;
   padding: 15px 30px;
   height: 30px;
-  width: 110px;
+  width: 130px;
 }
 
 .login-button {
@@ -32,6 +32,10 @@ $h1-navy: #333646;
   color: $link-gray;
 }
 
+.login-button:hover {
+  color: $button-link-blue;
+}
+
 .get-started-button {
   border: 1px solid gray;
   border-radius: 5px;
@@ -39,6 +43,10 @@ $h1-navy: #333646;
   color: white;
   text-transform: uppercase;
   font-size: 15px;
+}
+
+.get-started-button:hover {
+  background-color: #2f3699;
 }
 
 nav .get-started-button {
@@ -56,18 +64,14 @@ nav .get-started-button {
 }
 
 .splash-picture-col {
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 #splash-illustration {
   display: flex;
   height: 570px;
   width: 650px;
-  margin-left: -25px;
-}
-
-.text-col {
-  // margin: 0 15px;
+  margin-left: -30px;
 }
 
 .text-col h1 {
@@ -81,12 +85,12 @@ nav .get-started-button {
 .text-col p {
   font-size: 20px;
   line-height: 1.8;
-
 }
 
 .text-col .get-started-button {
   display: inline-block;
-  margin: 15px 0;
+  margin-top: 30px;
+  margin-bottom: 15px;
   padding: 18px 45px;
 }
 
