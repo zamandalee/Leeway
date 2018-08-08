@@ -6,14 +6,14 @@ const SplashContent = () => {
     <div className="splash">
 
       <nav className="login-signup">
-        <img className="nav-logo" src="" height="50" width="50"/>
+        <img className="nav-logo" src={window.images.leewaylogo} height="50" width="50"/>
         <Link className="header-button" to="/login">Login</Link>
         <Link className="header-button" to="/signup">Sign up!</Link>
       </nav>
 
       <div className='splash-content'>
         <div className ='splash-picture-col'>
-          <img id='splash-illustration' src="../../app/assets/images/splashpic.png"/>
+          <img id='splash-illustration' src={window.images.splashpic}/>
         </div>
 
         <div className = 'text-column'>
