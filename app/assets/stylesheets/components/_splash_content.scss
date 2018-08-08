@@ -1,3 +1,101 @@
-.header-button {
+$button-link-blue: #3f46ad;
+$text-gray: #5b5e6d;
+$link-gray: #6d6f7b;
+$h1-navy: #333646;
 
+.splash {
+  margin: 0 auto;
+  max-width: 1220px;
+  font-family: 'Lato', sans-serif;
+}
+
+//
+
+.splash-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  padding: 15px 30px;
+  height: 30px;
+  width: 110px;
+}
+
+.login-button {
+  margin: 10px;
+  padding: 5px 8px;
+  top: 15px;
+  color: $link-gray;
+}
+
+.get-started-button {
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: $button-link-blue;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+nav .get-started-button {
+  margin: 10px;
+  padding: 11px 15px;
+}
+
+//
+
+.splash-content {
+  display: flex;
+  flex-direction: row;
+  margin: 100px 0;
+  color: $text-gray;
+}
+
+.splash-picture-col {
+  margin-right: 50px;
+}
+
+#splash-illustration {
+  display: flex;
+  height: 570px;
+  width: 650px;
+  margin-left: -25px;
+}
+
+.text-col {
+  // margin: 0 15px;
+}
+
+.text-col h1 {
+  font-family: serif;
+  font-size: 75px;
+  font-weight: bold;
+  color: $h1-navy;
+  margin-bottom: 20px;
+}
+
+.text-col p {
+  font-size: 20px;
+  line-height: 1.8;
+
+}
+
+.text-col .get-started-button {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 18px 45px;
+}
+
+.text-col span {
+  display: block;
+  font-size: 15px;
+}
+
+.signin-link {
+  color: $button-link-blue;
+  text-decoration: underline;
 }

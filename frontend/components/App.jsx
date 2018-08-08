@@ -9,9 +9,6 @@ import {
 
 const App = () => (
   <div>
-    <Link to="/" className="header-link">
-      <h1>Leeway: Slack Clone</h1>
-    </Link>
     <Switch>
       <Route exact path="/" component={SplashContent} />
     </Switch>
