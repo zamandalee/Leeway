@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = ({ currentUser }) => (
-    <nav className="login-signup">
-        <img className="nav-logo" src="" height="50" width="50"/>
-        <Link className="header-button" to="/login">Login</Link>
-        <Link className="header-button" to="/signup">Sign up!</Link>
+const Header = ({ currentUser, logout }) => (
+    <nav className="splash-nav">
+      <Link to='/'>
+        <img className="nav-logo" src={window.images.leewaylogo}/>
+      </Link>
+      <div className="signup-login">
+        <Link className="login-button" to="/login" hidden={!!currentUser}>Sign in</Link>
+        <Link className="get-started-button" to="/signup" hidden={!!currentUser}>Get Started</Link>
+        <button onClick={logout} hidden={!currentUser}>Logout</button>
+      </div>
     </nav>
+
 );
 
 export default Header;

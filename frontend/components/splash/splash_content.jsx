@@ -1,19 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HeaderContainer from './header_container';
 
 const SplashContent = () => {
   return(
     <div className="splash">
 
-      <nav className="splash-nav">
-        <Link to='/'>
-          <img className="nav-logo" src={window.images.leewaylogo}/>
-        </Link>
-        <div className="signup-login">
-          <Link className="login-button" to="/login">Sign in</Link>
-          <Link className="get-started-button" to="/signup">Get Started</Link>
-        </div>
-      </nav>
+      <HeaderContainer />
 
       <div className="splash-content">
         <div className ="splash-picture-col">
