@@ -13,6 +13,11 @@ class SessionForm extends React.Component {
     this.handleSumbit = this.handleSumbit.bind(this);
   }
 
+  componentDidMount() {
+    this.usernameInput.focus();  //Rails way to autofocus: have cursor automatically in input
+    this.props.eraseErrors();
+  }
+
   update(field) {
     return e => (
       this.setState({[field]: e.target.value})
@@ -23,6 +28,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props.processForm(this.state);
   }
+
 
   alternateAuth() {
     if(this.props.formType === 'Sign Up') {
@@ -52,9 +58,16 @@ class SessionForm extends React.Component {
     );
   }
 
-  componentDidMount() {
-    this.usernameInput.focus();  //Rails way to autofocus: have cursor automatically in input
-    this.props.eraseErrors();
+  demoButton() {
+    if(this.props.formType === 'Log In') {
+      return (
+        <input
+          className="demo-button"
+          type="submit"
+          value="Guest Login"
+          onClick={ () => this.setState({username: 'harry_potter', password: '123456'}) } />
+      );
+    }
   }
 
   render() {
@@ -66,7 +79,7 @@ class SessionForm extends React.Component {
           <h1>{this.props.formHeader}</h1>
 
           {this.renderErrors()}
-
+          
           <form onSubmit={this.handleSumbit}>
             <p>Enter your username and password.</p>
             <input
@@ -85,6 +98,7 @@ class SessionForm extends React.Component {
               placeholder="password" />
 
             <input className="session-submit" type="submit" value={this.props.formType} />
+            {this.demoButton()}
           </form>
 
           {this.alternateAuth()}
