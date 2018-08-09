@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     this.usernameInput.focus();  //Rails way to autofocus: have cursor automatically in input
-    this.props.eraseErrors();
+    this.props.receiveErrors([]);
   }
 
   update(field) {
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
           <h1>{this.props.formHeader}</h1>
 
           {this.renderErrors()}
-          
+
           <form onSubmit={this.handleSumbit}>
             <p>Enter your username and password.</p>
             <input
