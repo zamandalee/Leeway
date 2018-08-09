@@ -1,2 +1,55 @@
-// Slack-Lato,appleLogo,sans-serif
-// #2c2d30
+$button-link-blue: #3f46ad;
+$text-dark: #2c2d30;
+
+.auth-page {
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+}
+
+.header {
+  border-bottom: 1px solid #ddd;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 630px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 50px 0;
+
+  border: 1px solid #ddd;
+  box-shadow: 0px 1px 3px #888;
+  border-radius: 2px;
+
+  text-align: center;
+  line-height: 2;
+}
+
+.session-form h1 {
+  display: block;
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.auth-credentials {
+  margin: 10px;
+  padding: 5px 10px;
+  min-width: 200px;
+
+  border: 1px solid #888;
+  border-radius: 5px;
+
+  text-align: left;
+  font-size: 20px;
+}
+
+button {
+
+}
+
+.alt-auth-link {
+  color: $button-link-blue;
+  text-decoration: underline;
+}

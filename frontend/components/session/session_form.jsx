@@ -29,13 +29,13 @@ class SessionForm extends React.Component {
     if(this.props.formType === 'Sign Up') {
       return (
         <div className="alternate-auth">
-          Already have an account? <Link to='/login'>Sign in</Link>.
+          Already have an account? <Link className="alt-auth-link" to='/login'>Sign in</Link>.
         </div>
       );
     } else {
       return (
         <div className="alternate-auth">
-          Don't have an account? <Link to='/signup'>Sign up</Link>.
+          Don't have an account? <Link className="alt-auth-link" to='/signup'>Sign up</Link>.
         </div>
       );
     }
@@ -43,27 +43,34 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form">
-        <h1>{this.props.formHeader}</h1>
+      <div className="auth-page">
+        <div className="header"><HeaderContainer /></div>
 
-        <form onSumbit={this.handleSumbit}>
-          <p>Enter your username and password.</p>
-          <input
-            onChange={this.update('username')}
-            value={this.state.username}
-            placeholder="hermione_granger">
-          </input>
+        <div className="session-form">
+          <h1>{this.props.formHeader}</h1>
 
-          <input
-            onChange={this.update('password')}
-            value={this.state.password}
-            placeholder="password">
-          </input>
+          <form onSumbit={this.handleSumbit}>
+            <p>Enter your username and password.</p>
+            <input
+              className="auth-credentials"
+              onChange={this.update('username')}
+              value={this.state.username}
+              placeholder="hermione_granger">
+            </input>
+            <br></br>
+            <br></br>
+            <input
+              className="auth-credentials"
+              onChange={this.update('password')}
+              value={this.state.password}
+              placeholder="password">
+            </input>
 
-          <button>Sign up</button>
-        </form>
+            <button>{this.props.formType}</button>
+          </form>
 
-        {this.alternateAuth()}
+          {this.alternateAuth()}
+        </div>
 
       </div>
 
