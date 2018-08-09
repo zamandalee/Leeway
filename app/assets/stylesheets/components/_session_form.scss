@@ -36,6 +36,10 @@ $button-green: #108851;
   font-weight: bold;
 }
 
+.errors {
+  color: red;
+}
+
 .auth-credentials, .session-submit {
   margin: 10px;
   padding: 5px 20px;

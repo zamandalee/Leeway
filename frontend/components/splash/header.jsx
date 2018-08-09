@@ -9,7 +9,7 @@ const Header = ({ currentUser, logout }) => (
       <div className="signup-login">
         <Link className="login-button" to="/login" hidden={!!currentUser}>Sign in</Link>
         <Link className="get-started-button" to="/signup" hidden={!!currentUser}>Get Started</Link>
-        <button onClick={logout} hidden={!currentUser}>Logout</button>
+        <button className="logout-button" onClick={logout} hidden={!currentUser}>Logout</button>
       </div>
     </nav>
 

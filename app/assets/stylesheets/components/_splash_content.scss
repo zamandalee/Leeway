@@ -54,6 +54,18 @@ nav .get-started-button {
   padding: 11px 15px;
 }
 
+.logout-button {
+  margin: 10px;
+  padding: 5px 8px;
+  top: 15px;
+  color: $link-gray;
+}
+
+.logout-button:hover {
+  color: $button-link-blue;
+}
+
+
 //
 
 .splash-content {
