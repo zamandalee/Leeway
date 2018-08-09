@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="auth-page">
+      <div className="session">
         <div className="header"><HeaderContainer /></div>
 
         <div className="session-form">
@@ -55,10 +55,10 @@ class SessionForm extends React.Component {
               className="auth-credentials"
               onChange={this.update('username')}
               value={this.state.username}
-              placeholder="hermione_granger">
+              placeholder="hermione_granger"
+              autofocus="autofocus">
             </input>
-            <br></br>
-            <br></br>
+
             <input
               className="auth-credentials"
               onChange={this.update('password')}

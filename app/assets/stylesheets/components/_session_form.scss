@@ -1,9 +1,11 @@
 $button-link-blue: #3f46ad;
 $text-dark: #2c2d30;
+$button-green: #108851;
 
-.auth-page {
+.session {
   margin: 0 auto;
   font-family: 'Lato', sans-serif;
+  background-color: cream;
 }
 
 .header {
@@ -13,13 +15,16 @@ $text-dark: #2c2d30;
 .session-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
   max-width: 630px;
   margin: auto;
-  margin-top: 50px;
-  padding: 50px 0;
+  margin-top: 60px;
+  padding: 30px 0;
 
-  border: 1px solid #ddd;
-  box-shadow: 0px 1px 3px #888;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 1px 1px -1px #444;
   border-radius: 2px;
 
   text-align: center;
@@ -29,16 +34,16 @@ $text-dark: #2c2d30;
 .session-form h1 {
   display: block;
 
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
 }
 
 .auth-credentials {
   margin: 10px;
-  padding: 5px 10px;
-  min-width: 200px;
+  padding: 5px 20px;
+  min-width: 300px;
 
-  border: 1px solid #888;
+  border: 1px solid #777;
   border-radius: 5px;
 
   text-align: left;
@@ -46,10 +51,20 @@ $text-dark: #2c2d30;
 }
 
 button {
+  margin: 10px;
+  padding: 10px 20px;
+  min-width: 300px;
+
+  border-radius: 5px;
+  background-color: #0c7c4e;
+  color: white;
 
 }
 
 .alt-auth-link {
   color: $button-link-blue;
+}
+
+.alt-auth-link:hover {
   text-decoration: underline;
 }
