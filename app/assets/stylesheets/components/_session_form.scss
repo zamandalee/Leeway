@@ -36,7 +36,7 @@ $button-green: #108851;
   font-weight: bold;
 }
 
-.auth-credentials, button {
+.auth-credentials, .session-submit {
   margin: 10px;
   padding: 5px 20px;
   min-width: 300px;
@@ -50,12 +50,12 @@ $button-green: #108851;
   text-align: left;
 }
 
-button {
+.session-submit {
   background-color: #0c7c4e;
   color: white;
 }
 
-button:active {
+.session-submit:active {
   background-color: #ddd;
 }
 

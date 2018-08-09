@@ -21,8 +21,7 @@ class SessionForm extends React.Component {
 
   handleSumbit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(this.state);
   }
 
   alternateAuth() {
@@ -41,6 +40,19 @@ class SessionForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return(
+      <ul className="errors">
+        {this.props.errors.map((error, idx) => (
+          <li key={idx}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  //Rails way to autofocus: have cursor automatically in input
   componentDidMount() {
     this.usernameInput.focus();
   }
@@ -53,13 +65,15 @@ class SessionForm extends React.Component {
         <div className="session-form">
           <h1>{this.props.formHeader}</h1>
 
-          <form onSumbit={this.handleSumbit}>
+          {this.renderErrors()}
+
+          <form onSubmit={this.handleSumbit}>
             <p>Enter your username and password.</p>
             <input
               className="auth-credentials"
               onChange={this.update('username')}
               value={this.state.username}
-              placeholder="hermione_granger"
+              placeholder="harry_potter"
               ref={(input) => { this.usernameInput = input; }} />
 
             <input
@@ -68,7 +82,7 @@ class SessionForm extends React.Component {
               value={this.state.password}
               placeholder="password" />
 
-            <button>{this.props.formType}</button>
+            <input className="session-submit" type="submit" value={this.props.formType} />
           </form>
 
           {this.alternateAuth()}
