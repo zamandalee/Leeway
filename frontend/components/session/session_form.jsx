@@ -18,6 +18,7 @@ class SessionForm extends React.Component {
     this.props.receiveErrors([]);
   }
 
+
   update(field) {
     return e => (
       this.setState({[field]: e.target.value})
@@ -26,7 +27,9 @@ class SessionForm extends React.Component {
 
   handleSumbit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.processForm(this.state).then( () => {
+      this.props.history.push('/workspace');
+    });
   }
 
 
@@ -47,15 +50,20 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return(
-      <ul className="errors">
-        {this.props.errors.map((error, idx) => (
-          <li key={idx}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if(this.props.errors.length > 0) {
+      return(
+        <div className="errors">
+          <img id="error-img" src={window.images.erroricon} />
+          <ul className="errors-ul">
+            {this.props.errors.map((error, idx) => (
+              <li key={idx}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
   }
 
   demoButton() {
@@ -75,10 +83,11 @@ class SessionForm extends React.Component {
       <div className="session">
         <div className="header"><HeaderContainer /></div>
 
+        {this.renderErrors()}
+
         <div className="session-form">
           <h1>{this.props.formHeader}</h1>
 
-          {this.renderErrors()}
 
           <form onSubmit={this.handleSumbit}>
             <p>Enter your username and password.</p>
@@ -88,7 +97,8 @@ class SessionForm extends React.Component {
               onChange={this.update('username')}
               value={this.state.username}
               placeholder="harry_potter"
-              ref={(input) => { this.usernameInput = input; }} />
+              ref={(input) => { this.usernameInput = input; }}
+              />
 
             <input
               type="password"
@@ -96,6 +106,7 @@ class SessionForm extends React.Component {
               onChange={this.update('password')}
               value={this.state.password}
               placeholder="password" />
+
 
             <input className="session-submit" type="submit" value={this.props.formType} />
             {this.demoButton()}

@@ -10,27 +10,40 @@ $button-green: #108851;
 
 .header {
   border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
 }
 
-.errors {
-  // text-align: center;
-  color: red;
-}
-
-.session-form {
+.errors, .session-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
   max-width: 630px;
   margin: auto;
-  margin-top: 60px;
-  padding: 30px 0;
 
   background-color: white;
   border: 1px solid #e6e6e6;
-  box-shadow: 0 1px 1px -1px #444;
   border-radius: 2px;
+}
+
+.errors {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+
+  border-left: 5px solid #d30404;
+}
+
+#error-img {
+  height: 25px;
+  width: 25px;
+  padding: 10px;
+}
+
+.session-form {
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 0;
+
+  box-shadow: 0 1px 1px -1px #444;
 
   text-align: center;
   line-height: 2;
