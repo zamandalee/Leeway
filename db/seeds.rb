@@ -16,3 +16,7 @@ User.create(username: 'remus_lupin', password: '123456')
 User.create(username: 'fred_weasley', password: '123456')
 User.create(username: 'george_weasley', password: '123456')
 User.create(username: 'oliver_wood', password: '123456')
+
+Channel.create(title: 'Gryffindor Quidditch 🏆', private: false)
+Channel.create(title: 'Dumbledore\'s Army', private: false)
+Channel.create(title: 'Golden Trio 🦁', private: false)
