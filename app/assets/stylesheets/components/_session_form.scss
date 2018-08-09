@@ -32,33 +32,26 @@ $button-green: #108851;
 }
 
 .session-form h1 {
-  display: block;
-
   font-size: 35px;
   font-weight: bold;
 }
 
-.auth-credentials {
+.auth-credentials, button {
   margin: 10px;
   padding: 5px 20px;
   min-width: 300px;
 
-  border: 1px solid #777;
   border-radius: 5px;
-
-  text-align: left;
   font-size: 20px;
 }
 
+.auth-credentials {
+  border: 1px solid #777;
+  text-align: left;
+}
+
 button {
-  margin: 10px;
-  padding: 5px 20px;
-  min-width: 300px;
-
-  border-radius: 5px;
   background-color: #0c7c4e;
-
-  font-size: 20px;
   color: white;
 }
 
