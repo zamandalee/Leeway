@@ -62,6 +62,10 @@ button {
   color: white;
 }
 
+button:active {
+  background-color: #ddd;
+}
+
 .alt-auth-link {
   color: $button-link-blue;
 }
