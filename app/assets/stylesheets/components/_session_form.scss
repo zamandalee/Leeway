@@ -52,13 +52,14 @@ $button-green: #108851;
 
 button {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   min-width: 300px;
 
   border-radius: 5px;
   background-color: #0c7c4e;
-  color: white;
 
+  font-size: 20px;
+  color: white;
 }
 
 .alt-auth-link {

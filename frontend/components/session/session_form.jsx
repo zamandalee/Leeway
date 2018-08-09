@@ -41,6 +41,10 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.usernameInput.focus();
+  }
+
   render() {
     return (
       <div className="session">
@@ -56,15 +60,13 @@ class SessionForm extends React.Component {
               onChange={this.update('username')}
               value={this.state.username}
               placeholder="hermione_granger"
-              autofocus="autofocus">
-            </input>
+              ref={(input) => { this.usernameInput = input; }} />
 
             <input
               className="auth-credentials"
               onChange={this.update('password')}
               value={this.state.password}
-              placeholder="password">
-            </input>
+              placeholder="password" />
 
             <button>{this.props.formType}</button>
           </form>
