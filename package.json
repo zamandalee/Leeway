@@ -17,15 +17,16 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "webpack": "^4.16.5",
+  },
+  "devDependencies": {
     "webpack-cli": "^3.1.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": "8.9.0",
     "npm": "6.3.0"
   },
   "scripts": {
-    "postinstall": "webpack --mode=development",
+    "postinstall": "webpack -p",
     "webpack": "webpack --watch"
   }
 }
