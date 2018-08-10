@@ -3,7 +3,7 @@ import React from 'react';
 class MessageInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {body: '', chatId: props.currentChat};
+    this.state = {body: '', messageable_type: 'Channel', messageable_id: 1};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,8 +23,8 @@ class MessageInput extends React.Component {
       <form className="message-form" onSubmit={this.handleSubmit}>
         <input
           type="text"
-          className="message"
-          onChange={this.update}
+          className="message-input"
+          onChange={this.update()}
           value={this.state.body}
           placeholder='Message'/>
       </form>

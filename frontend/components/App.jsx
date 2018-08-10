@@ -15,9 +15,8 @@ import Workspace from './workspace/workspace';
 const App = () => (
   <div>
     <Switch>
-      <Route path="/workspace" component={SplashContent} />
-      <Route path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Route path="/workspace" component={Workspace} />
+      <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={SplashContent} />
       <Redirect to="/" />

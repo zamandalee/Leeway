@@ -2,13 +2,12 @@ import * as MessageApiUtil from '../util/message_api_util';
 
 export const RECEIVE_MESSAGES = 'CREATE_MESSAGES';
 export const RECEIVE_MESSAGE = 'CREATE_MESSAGE';
-export const CREATE_MESSAGE = 'CREATE_MESSAGE';
 export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
 
 export const createMessage = (message) => {
   return dispatch => {
-    return MessageApiUtil.createMessage(message).then( newMessage => {
-      return dispatch(receiveMessage(newMessage));
+    MessageApiUtil.createMessage(message).then( newMessage => {
+      dispatch(receiveMessage(newMessage));
     });
   };
 };

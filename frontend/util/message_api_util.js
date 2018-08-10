@@ -1,7 +1,12 @@
-export const createMessage = (message) => ({
-  method: 'POST',
-  url: `/api/channels/${message.messageable_id}/messages`
-});
+export const createMessage = (message) => {
+  return (
+    $.ajax({
+      method: 'POST',
+      url: `/api/channels/${message.messageable_id}/messages`,
+      data: {message}
+    })
+  );
+};
 
 // export const deleteMessage = (id) => ({
 //   method: 'DELETE',

@@ -15,7 +15,7 @@ class Api::ChannelsController < ApplicationController
 
   def show
     @channel = Channel.find(params[:id])
-    @message = Message.new()
+    puts @channel
   end
 
   # def update

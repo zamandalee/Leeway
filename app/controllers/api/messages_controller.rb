@@ -1,9 +1,17 @@
 class Api::MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
-    message.author_id = current_user.id
-    if message.save
-      render 'api/channels/show'
+
+    @message.author_id = current_user.id
+
+    if(@message.messageable_type == 'Channel')
+      @message.messageable_id = params[:channel_id]
+    else
+      @message.messageable_id = params[:direct_message_id]
+    end
+
+    if @message.save!
+      render :show
     else
       render json: @message.errors.full_messages, status: 422
     end
@@ -18,6 +26,6 @@ class Api::MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:body, :author_id, :messageable_type, :messageable_id)
+    params.require(:message).permit(:body, :messageable_type)
   end
 end
