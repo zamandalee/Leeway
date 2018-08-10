@@ -1,8 +1,14 @@
-<% allChats = Channel.all.concat(DirectMessage.all) %>
+<% Channel.all.each do |channel| %>
+    App[`chat-${<%=channel.id%>}:messages`] = App.cable.subscriptions.create(
+      {channel: "MessagesChannel", messageable_id: <%=channel.id%>}, {
+        received: (data) => data
+      }
+    );
+<% end %>
 
-<% allChats.each do |chat| %>
-    App[`chat-${<%=chat.id%>}:messages`] = App.cable.subscriptions.create(
-      {channel: "MessagesChannel", messageable_id: <%=chat.id%>}, {
+<% DirectMessage.all.each do |direct| %>
+    App[`chat-${<%=direct.id%>}:messages`] = App.cable.subscriptions.create(
+      {channel: "MessagesChannel", messageable_id: <%=direct.id%>}, {
         received: (data) => data
       }
     );
