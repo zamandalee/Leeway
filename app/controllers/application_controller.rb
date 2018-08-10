@@ -18,9 +18,6 @@ class ApplicationController < ActionController::Base
     user.reset_session_token!
     session[:session_token] = user.session_token
     @current_user = user
-
-    # Action Cable
-    cookies.signed[:user_id] = user.id
   end
 
   def logout

@@ -23,5 +23,3 @@ Channel.create(title: 'Gryffindor Quidditch 🏆', private: false)
 Channel.create(title: 'Hogwarts Residents', private: false)
 Channel.create(title: 'S.P.E.W', private: false)
 Channel.create(title: 'Weasley Family', private: false)
-
-DirectMessage.create()

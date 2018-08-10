@@ -7,6 +7,8 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Message
 
+  has_one_attached :photo
+
   attr_reader :password
 
   after_initialize :ensure_session_token
