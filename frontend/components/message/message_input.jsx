@@ -7,6 +7,10 @@ class MessageInput extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.messageInput.focus();
+  }
+
   update() {
     return e => {
       this.setState({body: e.target.value});
@@ -26,7 +30,8 @@ class MessageInput extends React.Component {
           className="message-input"
           onChange={this.update()}
           value={this.state.body}
-          placeholder='Message'/>
+          placeholder='Message'
+          ref={(input) => { this.messageInput = input; }}/>
       </form>
     );
   }

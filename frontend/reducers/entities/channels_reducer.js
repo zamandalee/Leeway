@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_CHANNELS, RECEIVE_CHANNEL } from '../../actions/message_actions';
+import { RECEIVE_CHANNELS, RECEIVE_CHANNEL } from '../../actions/channel_actions';
 
 const channelsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -7,7 +7,8 @@ const channelsReducer = (state = {}, action) => {
     case RECEIVE_CHANNELS:
       return action.payload;
     case RECEIVE_CHANNEL:
-      return merge( {}, state, {[action.payload.channel.id]: action.payload} );
+      return merge( {}, state,
+        {[action.payload.channel.id]: action.payload.channel});
     default:
       return state;
   }

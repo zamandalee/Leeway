@@ -1,3 +1,11 @@
-json.extract! @channel, :title, :id
+json.channel do
+  json.extract! @channel, :title, :id
+end
 
-json.array! @channel.messages, :body, :author_id, :messageable_type, :messageable_id
+json.messages do
+  @channel.messages.each do |message|
+    json.set! message.id do
+      json.extract! message, :body, :author_id, :messageable_type, :messageable_id
+    end
+  end
+end

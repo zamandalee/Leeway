@@ -3,6 +3,7 @@ import Cable from 'actioncable';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { receiveMessage } from '../../actions/message_actions';
+import { fetchChannel } from '../../actions/channel_actions';
 
 
 class MessageFeed extends React.Component {
@@ -34,6 +35,10 @@ class MessageFeed extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.props.fetchChannel(1);
+  }
+
   render() {
     return (
       <ul class="message-feed">
@@ -56,7 +61,8 @@ const mapStateToProps = ({ entities }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  receiveMessage: message => dispatch(receiveMessage(message))
+  receiveMessage: message => dispatch(receiveMessage(message)),
+  fetchChannel: id => dispatch(fetchChannel(id))
 });
 
-export default connect(mapStateToProps)(MessageFeed);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageFeed);

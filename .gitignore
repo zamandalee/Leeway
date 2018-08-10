@@ -27,6 +27,7 @@
 
 
 bundle.js*
+bundle.js
 node_modules/
 .byebug_history
 .DS_Store
