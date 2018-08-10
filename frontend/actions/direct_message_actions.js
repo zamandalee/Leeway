@@ -1,7 +1,7 @@
 import * as DirectMessageApiUtil from '../util/direct_message_api_util';
 
-export const RECEIVE_DIRECT_MESSAGE = 'RECEIVE_DIRECT_MESSAGE';
 export const RECEIVE_DIRECT_MESSAGES = 'RECEIVE_DIRECT_MESSAGES';
+export const RECEIVE_DIRECT_MESSAGE = 'RECEIVE_DIRECT_MESSAGE';
 
 export const fetchDirectMessages = () => {
   return dispatch => {
