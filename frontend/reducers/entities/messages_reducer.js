@@ -3,7 +3,7 @@ import {
   RECEIVE_MESSAGES,
   RECEIVE_MESSAGE,
   REMOVE_MESSAGE
-} from '../../actions/messageable_actions';
+} from '../../actions/message_actions';
 
 const messagesReducer = (state = {}, action) => {
   Object.freeze(state);

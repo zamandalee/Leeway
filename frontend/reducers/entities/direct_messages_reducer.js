@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_DIRECT_MESSAGES, RECEIVE_DIRECT_MESSAGE } from '../../actions/messageable_actions';
+import { RECEIVE_DIRECT_MESSAGES, RECEIVE_DIRECT_MESSAGE } from '../../actions/message_actions';
 
 const directMessagesReducer = (state = {}, action) => {
   Object.freeze(state);
