@@ -2,6 +2,7 @@
   "name": "Leeway",
   "private": true,
   "dependencies": {
+    "actioncable": "^5.2.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
@@ -18,8 +19,7 @@
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": "8.9.0",
     "npm": "6.3.0"
