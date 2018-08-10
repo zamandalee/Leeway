@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 
 class MessageInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {body: '', chatId: props.currentChat};
-    this.handleSumbit = this.handleSumbit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update() {
@@ -15,36 +13,23 @@ class MessageInput extends React.Component {
     };
   }
 
-  handleSumbit(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.createMessage(this.state);
   }
 
   render() {
     return (
-      <div className="workspace">
-        <h1>Channel Name</h1>
-        <MessageFeed />
-        <form>
-          <input
-            type="text"
-            className="message"
-            onChange={this.update}
-            value={this.state.body}
-            placeholder='Message here'/>
-        </form>
-      </div>
+      <form className="message-form" onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          className="message"
+          onChange={this.update}
+          value={this.state.body}
+          placeholder='Message'/>
+      </form>
     );
   }
 }
 
-
-export const mapStateToProps = state => ({
-
-});
-
-export const mapDispatchToProps = state => ({
-
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MessageInput);
+export default MessageInput;

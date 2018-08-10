@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { signup, receiveErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = state => ({
-  errors: state.errors.session,
+const mapStateToProps = ({ errors }) => ({
+  errors: errors.session,
   formHeader: 'Sign up for Leeway',
   formType: 'Sign Up'
 });

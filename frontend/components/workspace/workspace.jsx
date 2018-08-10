@@ -8,13 +8,12 @@ class Workspace extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.handleSumbit = this.handleSumbit.bind(this);
   }
 
   render() {
     return (
       <div className="workspace">
-        <h1>Channel Name</h1>
+        <h1>WORKSPACE</h1>
         <MessageFeed />
         <MessageInput />
       </div>

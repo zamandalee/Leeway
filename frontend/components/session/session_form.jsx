@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-    this.handleSumbit = this.handleSumbit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
     );
   }
 
-  handleSumbit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state).then( () => {
       this.props.history.push('/workspace');
@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
           <h1>{this.props.formHeader}</h1>
 
 
-          <form onSubmit={this.handleSumbit}>
+          <form onSubmit={this.handleSubmit}>
             <p>Enter your username and password.</p>
             <input
               type="text"
