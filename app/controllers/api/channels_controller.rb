@@ -15,27 +15,28 @@ class Api::ChannelsController < ApplicationController
 
   def show
     @channel = Channel.find(params[:id])
+    @message = Message.new()
   end
 
-  def update
-    # @channel = current_user.channels.find(params[:id])
-    @channel = Channel.find(params[:id])
-    if @channel.update_attributes(link_params)
-      render :show
-    else
-      render json: @channel.errors.full_messages, status: 422
-    end
-  end
-
-  def destroy
-    # @channel = current_user.channels.find(params[:id])
-    @channel = Channel.find(params[:id])
-    if @channel.destroy
-      render :index
-    else
-      render json: @channel.errors.full_messages, status: 422
-    end
-  end
+  # def update
+  #   # @channel = current_user.channels.find(params[:id])
+  #   @channel = Channel.find(params[:id])
+  #   if @channel.update_attributes(link_params)
+  #     render :show
+  #   else
+  #     render json: @channel.errors.full_messages, status: 422
+  #   end
+  # end
+  #
+  # def destroy
+  #   # @channel = current_user.channels.find(params[:id])
+  #   @channel = Channel.find(params[:id])
+  #   if @channel.destroy
+  #     render :index
+  #   else
+  #     render json: @channel.errors.full_messages, status: 422
+  #   end
+  # end
 
   private
   def channel_params
