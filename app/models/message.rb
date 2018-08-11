@@ -7,6 +7,7 @@ class Message < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
+# broadcasting to all users that are subscribed to the "..." channel
   after_create_commit do
     ActionCable.server.broadcast "chat-#{messageable_id}:messages",
       id: id,

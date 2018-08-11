@@ -1,3 +1,5 @@
+// when server starts, allow users to subscribe
+
 <% Channel.all.each do |channel| %>
     App[`chat-${<%=channel.id%>}:messages`] = App.cable.subscriptions.create(
       {channel: "MessagesChannel", messageable_id: <%=channel.id%>}, {
@@ -8,8 +10,7 @@
 
 <% DirectMessage.all.each do |direct| %>
     App[`chat-${<%=direct.id%>}:messages`] = App.cable.subscriptions.create(
-      {channel: "MessagesChannel", messageable_id: <%=direct.id%>}, {
-        received: (data) => data
-      }
+      {channel: "MessagesChannel", messageable_id: <%=direct.id%>},
+      {received: (data) => data}
     );
 <% end %>
