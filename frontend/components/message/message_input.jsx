@@ -33,15 +33,17 @@ class MessageInput extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          className="message-input"
-          onChange={this.update()}
-          value={this.state.body}
-          placeholder='Message'
-          ref={(input) => { this.messageInput = input; }}/>
-      </form>
+      <footer>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            className="message-input"
+            onChange={this.update()}
+            value={this.state.body}
+            placeholder='Message'
+            ref={(input) => { this.messageInput = input; }}/>
+        </form>
+      </footer>
     );
   }
 }

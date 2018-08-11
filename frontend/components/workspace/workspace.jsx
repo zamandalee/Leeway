@@ -13,7 +13,8 @@ class Workspace extends React.Component {
   render() {
     return (
       <div className="workspace">
-        <h1>WORKSPACE</h1>
+        <div className="index-sidebar"></div>
+        <h1>Hogwarts</h1>
         <MessageFeed />
         <MessageInputContainer />
       </div>
