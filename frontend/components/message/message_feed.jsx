@@ -20,7 +20,7 @@ class MessageFeed extends React.Component {
     }
     this.chats = cable.subscriptions.create({
       channel: "MessagesChannel",
-      chatId: this.props.currentChatId
+      messageable_id: this.props.messageableId
     }, {
       connected: () => {
         console.log("CONNECTED!");
@@ -30,6 +30,7 @@ class MessageFeed extends React.Component {
       },
       received: (data) => {
         data.chatId = this.props.currentChatId;
+        console.log(data);
         this.props.receiveMessage(data);
       }
     });
@@ -37,17 +38,22 @@ class MessageFeed extends React.Component {
 
   componentDidMount() {
     this.props.fetchChannel(1);
+    // this.props.fetchChannel(this.props.currentChat.id);
+    this.createSocket();
   }
 
   render() {
     return (
-      <ul class="message-feed">
+      <ul className="message-feed">
         {
-          Object.values(this.props.messages).map( (message) => (
-            <li className="message" key={message.id}>
-              {message.body}
-            </li>
-          ))
+          Object.values(this.props.messages).map( (message) => {
+            return (
+              <li className="message" key={message.id}>
+                <p>{message.author}</p>
+                <p>{message.body}</p>
+              </li>
+            );
+        })
         }
       </ul>
     );

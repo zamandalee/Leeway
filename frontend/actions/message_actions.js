@@ -6,9 +6,10 @@ export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
 
 export const createMessage = (message) => {
   return dispatch => {
-    MessageApiUtil.createMessage(message).then( newMessage => {
-      dispatch(receiveMessage(newMessage));
-    });
+    MessageApiUtil.createMessage(message);
+    // .then( newMessage => {
+    //   dispatch(receiveMessage(newMessage));
+    // });
   };
 };
 

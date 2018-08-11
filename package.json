@@ -27,6 +27,6 @@
   },
   "scripts": {
     "postinstall": "webpack -p",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch --mode=development"
   }
 }

@@ -11,6 +11,13 @@ class MessageInput extends React.Component {
     this.messageInput.focus();
   }
 
+  componentWillReceiveProps(nextProps) {
+    //uncomment once you're switching between channels
+    // if( this.props.currentChat.id !==  nextProps.currentChat.id) {
+    //   this.setState({body: ''});
+    // }
+  }
+
   update() {
     return e => {
       this.setState({body: e.target.value});
@@ -20,11 +27,13 @@ class MessageInput extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createMessage(this.state);
+    //this.props.createMessage({body: this.state.body, messageable_id: this.props.currentChat.id})
+    this.setState({body: ''}); //have this until you're switching between channels
   }
 
   render() {
     return (
-      <form className="message-form" onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           className="message-input"
