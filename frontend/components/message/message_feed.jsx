@@ -47,11 +47,10 @@ class MessageFeed extends React.Component {
     return (
       <ul className="message-feed">
         {
-          Object.values(this.props.messages).map( (message) => {
+          Object.values(this.props.messages).map( (message, idx) => {
             return (
-              <li className="message" key={message.id}>
-                <p>{message.author}</p>
-                <p>{message.body}</p>
+              <li className="message" key={idx}>
+                {message.author}{message.body}
               </li>
             );
         })

@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  def format_username
+    self.username.split("_").map{ |word| word.capitalize }.join(" ")
+  end
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user && user.is_password?(password) ? user : nil
