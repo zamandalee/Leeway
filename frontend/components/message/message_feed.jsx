@@ -50,7 +50,9 @@ class MessageFeed extends React.Component {
           Object.values(this.props.messages).map( (message, idx) => {
             return (
               <li className="message" key={idx}>
-                {message.author} {message.timestamp} {message.body}
+                <div className="message-author">{message.author}</div>
+                <div className="message-timestamp">{message.timestamp}</div>
+                <div className="message-body">{message.body}</div>
               </li>
             );
         })
