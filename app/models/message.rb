@@ -14,7 +14,8 @@ class Message < ApplicationRecord
       body: body,
       author_id: author_id,
       author: author.format_username,
-      messageable_type: messageable_type
+      messageable_type: messageable_type,
+      timestamp: created_at.strftime("%I:%M %p")
   end
 
 end
