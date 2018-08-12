@@ -1,4 +1,5 @@
 $timestamp-gray: #717274;
+$body-gray: #2c2d30;
 
 .chat-col {
   display: flex;
@@ -18,6 +19,7 @@ $timestamp-gray: #717274;
 }
 
 .message-author {
+  margin-top: 6px;
   font-size: 16px;
   font-weight: 900;
 }
@@ -34,5 +36,6 @@ $timestamp-gray: #717274;
   margin-bottom: 5px;
   font-size: 15px;
   font-weight: 400;
-  color: #2c2d30;
+  color: $body-gray;
+  line-height: 1.5;
 }
