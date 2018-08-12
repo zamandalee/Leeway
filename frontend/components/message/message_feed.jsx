@@ -53,6 +53,7 @@ class MessageFeed extends React.Component {
                 <li className="message" key={idx}>
                   <div className="message-author">{message.author}</div>
                   <div className="message-timestamp">{message.timestamp}</div>
+                  <br></br>
                   <div className="message-body">{message.body}</div>
                 </li>
               );

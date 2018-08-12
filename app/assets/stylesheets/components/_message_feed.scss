@@ -1,0 +1,38 @@
+$timestamp-gray: #717274;
+
+.chat-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  height: 100%;
+  left: 220px;
+  bottom: 0px;
+
+  margin: 15px 30px;
+}
+
+.message-author, .message-timestamp, .message-body {
+  display: inline-block;
+  align-items: center;
+}
+
+.message-author {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.message-timestamp {
+  padding: 0 5px;
+
+  font-size: 12px;
+  font-weight: 300;
+  color: $timestamp-gray;
+}
+
+.message-body {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #2c2d30;
+}

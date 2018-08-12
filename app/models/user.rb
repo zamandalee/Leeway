@@ -14,7 +14,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   def format_username
-    self.username.split("_").map{ |word| word.capitalize }.join(" ")
+    self.username.split("_").map{ |word| word.capitalize }.join(" ").concat(" ")
   end
 
   def self.find_by_credentials(username, password)

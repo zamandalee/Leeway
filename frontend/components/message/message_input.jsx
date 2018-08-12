@@ -34,7 +34,7 @@ class MessageInput extends React.Component {
   render() {
     return (
       <footer>
-        <form onSubmit={this.handleSubmit}>
+        <form className="message-form" onSubmit={this.handleSubmit}>
           <input
             type="text"
             className="message-input"

@@ -14,6 +14,7 @@ class Workspace extends React.Component {
       <div className="workspace">
         <div className="index-col">
           <h1>Hogwarts</h1>
+          <button className="index-logout-button" onClick={this.props.logout}>Logout</button>
         </div>
         <MessageFeed />
       </div>
@@ -21,4 +22,14 @@ class Workspace extends React.Component {
   }
 }
 
-export default Workspace;
+import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
+
+const mapStateToProps = () => ({
+});
+
+const mapDispatchToProps = dispatch => ({
+    logout: () => dispatch(logout())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Workspace);
