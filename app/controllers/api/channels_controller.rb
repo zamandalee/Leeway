@@ -15,7 +15,11 @@ class Api::ChannelsController < ApplicationController
 
   def show
     @channel = Channel.find(params[:id])
-    puts @channel
+    # if @channel && @channel.private?
+    #   @channel.permissions.each do |permission|
+    #     render :show if permission.user_id == current_user
+    #   end
+    # end
   end
 
   # def update

@@ -20,7 +20,7 @@ class Api::MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     if @message.delete
-      render 'api/channels/show'
+      render :show
     end
   end
 
