@@ -1,7 +1,26 @@
-.message {
-  display: flex;
-  border: 1px solid black;
+.chat-col {
+  // display: flex;
 }
 
-.message-body {
+.message-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border: 1px solid black;
+}
+//
+//
+// .message-body {
+// }
+//
+.message-input {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid red;
 }

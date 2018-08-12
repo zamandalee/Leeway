@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { receiveMessage } from '../../actions/message_actions';
 import { fetchChannel } from '../../actions/channel_actions';
-
+import MessageInputContainer from '../message/message_input_container';
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -45,19 +45,22 @@ class MessageFeed extends React.Component {
 
   render() {
     return (
-      <ul className="message-feed">
-        {
-          Object.values(this.props.messages).map( (message, idx) => {
-            return (
-              <li className="message" key={idx}>
-                <div className="message-author">{message.author}</div>
-                <div className="message-timestamp">{message.timestamp}</div>
-                <div className="message-body">{message.body}</div>
-              </li>
-            );
-        })
-        }
-      </ul>
+      <div className="chat-col">
+        <ul className="message-feed">
+          {
+            Object.values(this.props.messages).map( (message, idx) => {
+              return (
+                <li className="message" key={idx}>
+                  <div className="message-author">{message.author}</div>
+                  <div className="message-timestamp">{message.timestamp}</div>
+                  <div className="message-body">{message.body}</div>
+                </li>
+              );
+            })
+          }
+        </ul>
+        <MessageInputContainer />
+      </div>
     );
   }
 }

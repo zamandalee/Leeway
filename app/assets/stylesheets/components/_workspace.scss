@@ -1,21 +1,34 @@
+$sidebar-purple: #4D394B;
+
 .workspace {
+  height: 100%;
   display: flex;
   flex-direction: row;
   font-family: 'Lato', sans-serif;
-  height: 100%;
 }
 
-.index-sidebar {
+// temporary placeholder for channel index
+.index-col {
   flex-direction: column;
   float: left;
   flex-grow: 1;
-  position: relative;
+  position: absolute;
+  overflow-y: auto;
 
-  // min-height: 100%;
-  height: 1000px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+
   min-width: 220px;
-  max-width: 220px;
+  height: 100%;
+  left: 0;
+  top: 0;
 
-  background-color: #4D394B;
+  background-color: $sidebar-purple;
   color: #cac4c9;
+}
+
+.index-col h1 {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
 }
