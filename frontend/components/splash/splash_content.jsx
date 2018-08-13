@@ -15,14 +15,14 @@ const SplashContent = () => {
 
         <div className="text-col">
           <h1>Where Work Happens</h1>
-          <p>
+          <p className="blurb">
             When your team needs to kick off a project, hire a new
             employee, deploy some code, review a sales contract, finalize
             next year's budget, measure an A/B test, plan your next office
             opening, and more, Leeway has you covered.
           </p>
           <Link className="get-started-button" to="signup">Get Started</Link>
-          <div> Already using Leeway? <Link className="signin-link" to="/signin">Sign in</Link>.</div>
+          <p> Already using Leeway? <Link className="signin-link" to="/signin">Sign in</Link>.</p>
         </div>
       </div>
 
@@ -30,4 +30,15 @@ const SplashContent = () => {
   );
 };
 
-export default SplashContent;
+
+import { connect } from 'react-redux';
+import { login } from '../../actions/session_actions';
+
+const mapStateToProps = (state) => ({
+});
+
+const mapDispatchToProps = dispatch => ({
+  guestLogin: (user) => dispatch(login(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SplashContent);

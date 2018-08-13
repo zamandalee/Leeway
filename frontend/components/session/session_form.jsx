@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import HeaderContainer from '../splash/header_container';
 
 class SessionForm extends React.Component {
@@ -122,4 +121,19 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+import { connect } from 'react-redux';
+import { login, receiveErrors } from '../../actions/session_actions';
+import SessionForm from './session_form';
+
+const mapStateToProps = ({ errors }) => ({
+  errors: errors.session,
+  formHeader: 'Log in to Leeway',
+  formType: 'Log In'
+});
+
+const mapDispatchToProps = dispatch => ({
+  processForm: (user) => dispatch(login(user)),
+  receiveErrors: (errors) => dispatch(receiveErrors(errors))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

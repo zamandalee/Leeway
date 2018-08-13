@@ -25,44 +25,39 @@ $h1-navy: #333646;
   width: 130px;
 }
 
-.login-button {
-  margin: 10px;
-  padding: 5px 8px;
-  top: 15px;
-  color: $link-gray;
-}
-
-.login-button:hover {
-  color: $button-link-blue;
-}
-
 .get-started-button {
   border: 1px solid gray;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: $button-link-blue;
   color: white;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 14px;
+}
+
+nav .get-started-button, .login-button, .logout-button {
+  margin: 15px;
+}
+
+nav .get-started-button {
+  padding: 11px 15px;
+}
+
+.login-button, .logout-button, .workspace-button {
+  top: 15px;
+  padding: 9px;
+
+  border: 2px solid #a8a9b0;
+  border-radius: 5px;
+  color: $link-gray;
+  font-size: 16px;
+}
+
+.login-button:hover, .logout-button:hover, .workspace-button:hover {
+  color: $button-link-blue;
 }
 
 .get-started-button:hover {
   background-color: #2f3699;
-}
-
-nav .get-started-button {
-  margin: 10px;
-  padding: 11px 15px;
-}
-
-.logout-button {
-  margin: 10px;
-  padding: 5px 8px;
-  top: 15px;
-  color: $link-gray;
-}
-
-.logout-button:hover {
-  color: $button-link-blue;
 }
 
 
@@ -94,20 +89,22 @@ nav .get-started-button {
   margin-bottom: 20px;
 }
 
-.text-col p {
-  font-size: 20px;
-  line-height: 1.8;
-}
-
 .text-col .get-started-button {
   display: inline-block;
   margin-top: 30px;
   margin-bottom: 15px;
-  padding: 18px 45px;
+  padding: 19px 40px 20px;
 }
 
-.text-col span {
+.text-col .blurb {
+  font-family: "Averta";
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.text-col p {
   display: block;
+  font-family: "Averta";
   font-size: 15px;
 }
 
