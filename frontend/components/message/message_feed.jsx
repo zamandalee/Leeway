@@ -67,7 +67,7 @@ class MessageFeed extends React.Component {
 }
 
 const mapStateToProps = ({ entities }) => ({
-  currentChat: entities.channels[1],
+  currentChat: entities.channels.first,
   messages: entities.messages
   //need messages, bc upon change in messages, will rerender -> live
 });

@@ -5,10 +5,11 @@ $body-gray: #2c2d30;
   display: flex;
   flex-direction: column;
   flex: 1;
-  position: relative;
+  position: absolute;
+  justify-content: flex-end;
   height: 100%;
   left: 220px;
-  bottom: 0px;
+  bottom: 0;
 
   margin: 15px 30px;
 }

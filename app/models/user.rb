@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :messages,
     foreign_key: :author_id,
     class_name: :Message
+  has_many :permissions
+  has_many :channels, through: :permissions
 
   has_one_attached :photo
 
