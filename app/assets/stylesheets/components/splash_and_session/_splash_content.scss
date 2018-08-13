@@ -25,7 +25,7 @@ $h1-navy: #333646;
   width: 130px;
 }
 
-.get-started-button {
+.get-started-button, .guest-login-button {
   border: 1px solid gray;
   border-radius: 4px;
   background-color: $button-link-blue;
@@ -34,11 +34,11 @@ $h1-navy: #333646;
   font-size: 14px;
 }
 
-nav .get-started-button, .login-button, .logout-button {
+nav .get-started-button, .guest-login-button, .login-button, .logout-button {
   margin: 15px;
 }
 
-nav .get-started-button {
+nav .get-started-button, .guest-login-button {
   padding: 11px 15px;
 }
 
@@ -56,7 +56,7 @@ nav .get-started-button {
   color: $button-link-blue;
 }
 
-.get-started-button:hover {
+.get-started-button:hover, .guest-login-button:hover {
   background-color: #2f3699;
 }
 
@@ -89,7 +89,7 @@ nav .get-started-button {
   margin-bottom: 20px;
 }
 
-.text-col .get-started-button {
+.text-col .get-started-button, .guest-login-button {
   display: inline-block;
   margin-top: 30px;
   margin-bottom: 15px;
