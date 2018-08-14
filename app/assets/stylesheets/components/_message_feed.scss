@@ -40,7 +40,15 @@ $body-gray: #2c2d30;
   border-radius: 5px;
 }
 
-.message-author, .message-timestamp, .message-body {
+// INDIVIDUAL MESSAGES
+
+.prof-pic {
+  margin: 2px;
+  width: 36px;
+  height: 36px;
+}
+
+.message-author, .message-timestamp, .message-body, .prof-pic {
   display: inline-block;
   align-items: center;
 }
@@ -60,7 +68,7 @@ $body-gray: #2c2d30;
 }
 
 .message-body {
-  word-break: break-all;
+  word-break: break-word;
   margin-bottom: 5px;
   font-size: 15px;
   font-weight: 400;

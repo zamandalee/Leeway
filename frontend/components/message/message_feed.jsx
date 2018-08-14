@@ -51,6 +51,7 @@ class MessageFeed extends React.Component {
             Object.values(this.props.messages).map( (message, idx) => {
               return (
                 <li className="message" key={idx}>
+                  <div className="prof-pic"><img src={message.photoUrl} /></div>
                   <div className="message-author">{message.author}</div>
                   <div className="message-timestamp">{message.timestamp}</div>
                   <br></br>
