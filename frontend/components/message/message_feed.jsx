@@ -41,12 +41,12 @@ class MessageFeed extends React.Component {
   }
 
   render() {
-    const { messages, users } = this.props;
+    const { currentChat, messages, users } = this.props;
     return (
       <div className="message-feed-div">
         <ul className="message-feed-ul">
           {
-            Object.values(messages).map( (message, idx) => {
+            selectChannelMessages(currentChat.id, messages).map( (message, idx) => {
               return (
                   <li key={idx}>
                     <div className="message">
