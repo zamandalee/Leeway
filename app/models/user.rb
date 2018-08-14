@@ -3,6 +3,8 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  validate :ensure_photo
+
   has_many :messages,
     foreign_key: :author_id,
     class_name: :Message
@@ -14,6 +16,12 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token
+
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "User must have a profile photo"
+    end
+  end
 
   def format_username
     self.username.split("_").map{ |word| word.capitalize }.join(" ").concat(" ")

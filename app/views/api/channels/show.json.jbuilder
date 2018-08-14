@@ -8,6 +8,7 @@ json.messages do
       json.extract! message, :id, :body, :author_id, :messageable_type, :messageable_id
       json.author message.author.format_username
       json.timestamp message.created_at.strftime("%-I:%M %p")
+      json.photoUrl url_for(message.author.photo)
     end
   end
 end
