@@ -30,31 +30,50 @@ $body-gray: #2c2d30;
   flex-direction: column-reverse;
   overflow: auto;
   justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 .message-input {
   width: 100%;
-  padding: 10px 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 
-  border: 2px solid #b3b3b4;
+  border: 2px solid $timestamp-gray;
   border-radius: 5px;
 }
 
 // INDIVIDUAL MESSAGES
-
-.prof-pic {
-  margin: 2px;
-  width: 36px;
-  height: 36px;
+.message {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 9px;
 }
 
-.message-author, .message-timestamp, .message-body, .prof-pic {
-  display: inline-block;
+.message-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 7px;
+}
+
+.author-timestamp {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  padding-bottom: 2px;
+}
+
+img {
+  margin: 0 2px;
+  width: 36px;
+  height: 36px;
+  border-radius: 3px;
+}
+
+.message-author, .message-timestamp, .message-body {
+  box-sizing: border-box;
 }
 
 .message-author {
-  margin-top: 6px;
   font-size: 16px;
   font-weight: 900;
 }
@@ -68,10 +87,10 @@ $body-gray: #2c2d30;
 }
 
 .message-body {
-  word-break: break-word;
-  margin-bottom: 5px;
   font-size: 15px;
   font-weight: 400;
   color: $body-gray;
+
+  word-break: break-word;
   line-height: 1.5;
 }
