@@ -1,5 +1,6 @@
 class Channel < ApplicationRecord
-  validates :title, :private, presence: true
+  validates :title, presence: true
+  validates :private, inclusion: { in: [true, false] }
 
   has_many :messages, as: :messageable
 

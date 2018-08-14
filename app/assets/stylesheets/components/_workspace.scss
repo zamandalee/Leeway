@@ -2,11 +2,15 @@ $index-purple: #4D394B;
 $index-gray: #cac4c9;
 // $index-selected-gray:
 
+body {
+  overflow: hidden;
+}
+
 .workspace {
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: calc(100% - 220px);
+  width: 100%;
 
   font-family: 'Lato', sans-serif;
 }
@@ -15,8 +19,7 @@ $index-gray: #cac4c9;
   display: flex;
   flex-direction: column;
   min-width: 220px;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
 
   padding: 10px 15px;
   box-sizing: border-box;

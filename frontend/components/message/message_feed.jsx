@@ -45,8 +45,8 @@ class MessageFeed extends React.Component {
 
   render() {
     return (
-      <div className="chat-col">
-        <ul className="message-feed">
+      <div className="message-feed-div">
+        <ul className="message-feed-ul">
           {
             Object.values(this.props.messages).map( (message, idx) => {
               return (
@@ -60,7 +60,6 @@ class MessageFeed extends React.Component {
             })
           }
         </ul>
-        <MessageInputContainer />
       </div>
     );
   }
