@@ -6,11 +6,11 @@ $h1-navy: #333646;
 
 .splash {
   margin: 0 auto;
-  max-width: 1220px;
-  font-family: 'Lato', sans-serif;
+  max-width: 1240px;
+  font-family: "Averta";
 }
 
-//
+//HEADER
 
 .splash-nav {
   display: flex;
@@ -30,9 +30,11 @@ $h1-navy: #333646;
   border: 1px solid gray;
   border-radius: 4px;
   background-color: $button-link-blue;
+
+  font-weight: bold;
+  font-size: 13px;
   color: white;
   text-transform: uppercase;
-  font-size: 14px;
 }
 
 nav .get-started-button, .guest-login-button, .login-button, .logout-button {
@@ -62,7 +64,7 @@ nav .get-started-button, .guest-login-button {
 }
 
 
-//
+//SPLASH CONTENT
 
 .splash-content {
   display: flex;
@@ -97,16 +99,15 @@ nav .get-started-button, .guest-login-button {
   padding: 19px 40px 20px;
 }
 
-.text-col .blurb {
-  font-family: "Averta";
-  font-size: 20px;
-  line-height: 1.8;
-}
-
 .text-col p {
   display: block;
-  font-family: "Averta";
   font-size: 15px;
+  font-weight: lighter;
+}
+
+.text-col .blurb {
+  font-size: 20px;
+  line-height: 1.8;
 }
 
 .signin-link {
