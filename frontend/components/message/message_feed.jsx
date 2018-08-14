@@ -2,6 +2,7 @@ import React from 'react';
 import Cable from 'actioncable';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import { receiveMessage } from '../../actions/message_actions';
 import { fetchChannel } from '../../actions/channel_actions';
 import MessageInputContainer from '../message/message_input_container';
@@ -44,18 +45,17 @@ class MessageFeed extends React.Component {
   }
 
   render() {
+    const { messages, users } = this.props;
     return (
       <div className="message-feed-div">
         <ul className="message-feed-ul">
           {
-            Object.values(this.props.messages).map( (message, idx) => {
+            Object.values(messages).map( (message, idx) => {
               return (
                   <li key={idx}>
                     <div className="message">
-                      <div className="prof-pic"><img src={message.photoUrl} /></div>
-
+                      <div><img src={users[message.author_id].photoUrl}/></div>
                       <div className="message-content">
-
                         <div className="author-timestamp">
                           <div className="message-author">{message.author}</div>
                           <div className="message-timestamp">{message.timestamp}</div>
@@ -76,7 +76,8 @@ class MessageFeed extends React.Component {
 
 const mapStateToProps = ({ entities }) => ({
   currentChat: entities.channels.first,
-  messages: entities.messages
+  messages: entities.messages,
+  users: entities.users
   //need messages, bc upon change in messages, will rerender -> live
 });
 

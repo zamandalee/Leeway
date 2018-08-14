@@ -16,6 +16,7 @@ class Message < ApplicationRecord
       author: author.format_username,
       messageable_type: messageable_type,
       timestamp: created_at.strftime("%-I:%M %p")
+      # photoUrl: url_for(author.photo)
   end
 
 end

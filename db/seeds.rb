@@ -24,7 +24,7 @@ user4 = User.create(username: 'neville_longbottom', password: '123456')
   user4.photo.attach(io: File.open("app/assets/images/profpic4.png"), filename: 'profpic4.png')
   user4.save!
 
-user5 = User.create(username: 'draco_malfoy', password: '423456')
+user5 = User.create(username: 'draco_malfoy', password: '123456')
   user5.photo.attach(io: File.open("app/assets/images/profpic5.png"), filename: 'profpic5.png')
   user5.save!
 
@@ -48,14 +48,63 @@ user10 = User.create(username: 'oliver_wood', password: '123456')
   user10.photo.attach(io: File.open("app/assets/images/profpic10.png"), filename: 'profpic10.png')
   user10.save!
 
+user11 = User.create(username: 'ginny_weasley', password: '123456')
+  user11.photo.attach(io: File.open("app/assets/images/profpic11.png"), filename: 'profpic11.png')
+  user11.save!
+
 Channel.destroy_all
 
-Channel.create(title: 'Dumbledore\'s Army')
-Channel.create(title: 'Golden Trio 🦁')
-Channel.create(title: 'Gryffindor Quidditch 🏆')
-Channel.create(title: 'Hogwarts Residents')
-Channel.create(title: 'S.P.E.W')
-Channel.create(title: 'Weasley Family')
+channel1 = Channel.create(title: 'Dumbledore\'s Army')
+channel2 = Channel.create(title: 'Golden Trio 🦁')
+channel3 = Channel.create(title: 'Gryffindor Quidditch 🏆')
+channel4 = Channel.create(title: 'Hogwarts Residents')
+channel5 = Channel.create(title: 'S.P.E.W')
+channel6 = Channel.create(title: 'Weasley Family')
+
+
+Permission.destroy_all
+
+Permission.create(user_id: user1.id, channel_id: channel1.id)
+Permission.create(user_id: user2.id, channel_id: channel1.id)
+Permission.create(user_id: user3.id, channel_id: channel1.id)
+Permission.create(user_id: user4.id, channel_id: channel1.id)
+Permission.create(user_id: user8.id, channel_id: channel1.id)
+Permission.create(user_id: user9.id, channel_id: channel1.id)
+Permission.create(user_id: user11.id, channel_id: channel1.id)
+
+Permission.create(user_id: user1.id, channel_id: channel2.id)
+Permission.create(user_id: user2.id, channel_id: channel2.id)
+Permission.create(user_id: user3.id, channel_id: channel2.id)
+
+Permission.create(user_id: user2.id, channel_id: channel3.id)
+Permission.create(user_id: user8.id, channel_id: channel3.id)
+Permission.create(user_id: user9.id, channel_id: channel3.id)
+Permission.create(user_id: user10.id, channel_id: channel3.id)
+Permission.create(user_id: user11.id, channel_id: channel3.id)
+
+Permission.create(user_id: user1.id, channel_id: channel4.id)
+Permission.create(user_id: user2.id, channel_id: channel4.id)
+Permission.create(user_id: user3.id, channel_id: channel4.id)
+Permission.create(user_id: user4.id, channel_id: channel4.id)
+Permission.create(user_id: user5.id, channel_id: channel4.id)
+Permission.create(user_id: user6.id, channel_id: channel4.id)
+Permission.create(user_id: user7.id, channel_id: channel4.id)
+Permission.create(user_id: user8.id, channel_id: channel4.id)
+Permission.create(user_id: user9.id, channel_id: channel4.id)
+Permission.create(user_id: user10.id, channel_id: channel4.id)
+Permission.create(user_id: user11.id, channel_id: channel4.id)
+
+Permission.create(user_id: user1.id, channel_id: channel5.id)
+Permission.create(user_id: user2.id, channel_id: channel5.id)
+Permission.create(user_id: user3.id, channel_id: channel5.id)
+Permission.create(user_id: user4.id, channel_id: channel5.id)
+
+Permission.create(user_id: user1.id, channel_id: channel6.id)
+Permission.create(user_id: user2.id, channel_id: channel6.id)
+Permission.create(user_id: user3.id, channel_id: channel6.id)
+Permission.create(user_id: user8.id, channel_id: channel6.id)
+Permission.create(user_id: user9.id, channel_id: channel6.id)
+Permission.create(user_id: user11.id, channel_id: channel6.id)
 
 Message.destroy_all
 
