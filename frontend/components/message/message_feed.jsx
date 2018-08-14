@@ -1,11 +1,6 @@
 import React from 'react';
 import Cable from 'actioncable';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-
-import { receiveMessage } from '../../actions/message_actions';
-import { fetchChannel } from '../../actions/channel_actions';
-import MessageInputContainer from '../message/message_input_container';
+import { selectChannelMessages } from '../../actions/selectors';
 
 class MessageFeed extends React.Component {
   constructor(props) {
@@ -39,9 +34,10 @@ class MessageFeed extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchChannel(1);
-    // this.props.fetchChannel(this.props.currentChat.id);
-    this.createSocket();
+    this.props.channels.map( (channel) => {
+      this.props.fetchChannel(channel.id);
+      this.createSocket();
+    });
   }
 
   render() {
@@ -74,8 +70,15 @@ class MessageFeed extends React.Component {
   }
 }
 
-const mapStateToProps = ({ entities }) => ({
-  currentChat: entities.channels.first,
+import { connect } from 'react-redux';
+import { receiveMessage } from '../../actions/message_actions';
+import { fetchChannel } from '../../actions/channel_actions';
+import MessageInputContainer from '../message/message_input_container';
+
+
+const mapStateToProps = ({ entities, entities: { channels }, session }) => ({
+  currentChat: channels[session.selectedChannelId],
+  channels: Object.values(channels),
   messages: entities.messages,
   users: entities.users
   //need messages, bc upon change in messages, will rerender -> live

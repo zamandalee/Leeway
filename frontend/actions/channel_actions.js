@@ -2,7 +2,6 @@ import * as ChannelApiUtil from '../util/channel_api_util';
 
 export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
-export const SELECT_CHANNEL = 'SELECT_CHANNEL';
 
 export const fetchChannels = () => {
   return dispatch => {
@@ -19,11 +18,6 @@ export const fetchChannel = (id) => {
     });
   };
 };
-
-export const selectChannel = (id) => ({
-  type: SELECT_CHANNEL,
-  id
-});
 
 const receiveChannels = (payload) => ({
   type: RECEIVE_CHANNELS,

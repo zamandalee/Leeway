@@ -18,7 +18,7 @@ class ChannelListItem extends React.Component {
   render() {
     return (
       <div className="channel-li" id={this.selected()}>
-        <li onClick={this.handleClick}>
+        <li key={this.props.key} onClick={this.handleClick}>
           <button>{this.props.channel.title}</button>
         </li>
       </div>
@@ -27,7 +27,7 @@ class ChannelListItem extends React.Component {
 }
 
 import { connect } from 'react-redux';
-import { selectChannel } from '../../actions/channel_actions';
+import { selectChannel } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
   channels: state.entities.channels,
