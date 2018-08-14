@@ -13,6 +13,7 @@ class IndexSidebar extends React.Component {
               <h1>Hogwarts</h1>
               <h2>{this.props.currentUser.username}</h2>
               <button className="index-logout-button" onClick={this.props.logout}>Logout</button>
+              <ChannelList />
             </div>
         );
     }
