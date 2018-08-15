@@ -1,0 +1,68 @@
+.channel {
+  display: flex;
+  flex-direction: column;
+
+  margin: auto;
+  max-width: 630px;
+
+  font-family: 'Lato', sans-serif;
+
+  padding: 100px 0;
+
+  line-height: 2;
+}
+
+.form-title {
+  height: 60px;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.channel p {
+  font-size: 15px;
+  font-weight: lighter;
+  color: #a0a0a0;
+}
+
+.channel-form h2 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.title-label {
+  padding: 20px 0;
+}
+
+.title-input {
+  width: 100%;
+
+  border: 1px solid #919193;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.channel-form-buttons {
+  width: 100%;
+  margin-top: 15px;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cancel-button, .submit-button {
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.cancel-button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: 1px solid #c6c6c7;
+}
+
+.submit-button {
+  padding: 3px 15px;
+  background: #008951;
+  color: white;
+}
