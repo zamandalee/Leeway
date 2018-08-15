@@ -4,12 +4,10 @@ class ChannelListItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    // this.state = {selected: ""};
   }
 
   handleClick() {
     this.props.selectChannel(this.props.channel.id);
-    // this.setState({selected: "selected-channel"});
   }
 
   titleSymbol() {

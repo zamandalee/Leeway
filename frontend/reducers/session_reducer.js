@@ -8,7 +8,7 @@ import { SELECT_CHANNEL } from '../actions/session_actions';
 
 //selectedChannelId defaults to the #general channel's id
 //selectedChannelId refactor later
-const sessionReducer = (state = {id: null, selectedChannelId: 3}, action) => {
+const sessionReducer = (state = {id: null, selectedChannelId: 2}, action) => {
   Object.freeze(state);
   const newState = merge({}, state);
 

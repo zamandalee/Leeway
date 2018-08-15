@@ -16,8 +16,7 @@ class MessageFeed extends React.Component {
     }
     this.chats = cable.subscriptions.create({
       channel: "MessagesChannel",
-      messageable_id: 1
-      // messageable_id: this.props.currentChat.id //this will be sent to messages_channel's params
+      messageable_id: this.props.currentChat.id //this will be sent to messages_channel's params
     }, {
       connected: () => {
         console.log("CONNECTED!");
@@ -26,7 +25,7 @@ class MessageFeed extends React.Component {
         console.log("---DISCONNECTED---");
       },
       received: (data) => { //data passed from js/channels/messages.js.erb
-        data.chatId = this.props.currentChatId;
+        data.messageableId = this.props.currentChat.id; //LOOK AT
         console.log(data);
         this.props.receiveMessage(data);
       }

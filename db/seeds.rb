@@ -103,9 +103,9 @@ Message.create(body: 'Lol too true', author_id: user14.id, messageable_type: "Ch
 Message.create(body: 'We\'ll be starting with the basics, before doing some of the cool stuff', author_id: user2.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'I\'ve come up with an idea to communicate with each other off Leeway', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'You know, because we\'re not on our computers during the day', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
-Message.create(body: 'What is it?', author_id: user11.id, messageable_type: "Channel", messageable_id: channel1.id)
-Message.create(body: 'I\'ve put a protean charm on leprechaun gold!', author_id: user11.id, messageable_type: "Channel", messageable_id: channel1.id)
-Message.create(body: 'The serial number will really be the date and time of our next meeting, and when Harry changes the numbers on his coin, ours will all change too', author_id: user11.id, messageable_type: "Channel", messageable_id: channel1.id)
+Message.create(body: 'What is it?', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
+Message.create(body: 'I\'ve put a protean charm on leprechaun gold!', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
+Message.create(body: 'The serial number will really be the date and time of our next meeting, and when Harry changes the numbers on his coin, ours will all change too', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: '...', author_id: user8.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'What?', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'I thought it was a pretty good idea...', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
@@ -130,7 +130,7 @@ Message.create(body: 'Another reminder: the Forbidden Forest is out of bounds to
 Message.create(body: 'Now, to bed, all of you', author_id: user6.id, messageable_type: "Channel", messageable_id: channel2.id)
 Message.create(body: 'There will be open pitch tomorrow to practice quidditch for those who are interested!', author_id: user10.id, messageable_type: "Channel", messageable_id: channel2.id)
 Message.create(body: 'I\'ve started an organization called S.P.E.W. — the Society for the Protection of Elfish Welfare', author_id: user1.id, messageable_type: "Channel", messageable_id: channel2.id)
-Message.create(body: 'I was going to put Stop the Outrageous Abuse of Our Fellow Magical Creatures and Campaign for a Change in Their Legal Status – but it wouldn\’t fit on the badge. So that’s the heading of our manifesto instead', author_id: user1.id, messageable_type: "Channel", messageable_id: channel2.id)
+Message.create(body: 'I was going to put Stop the Outrageous Abuse of Our Fellow Magical Creatures and Campaign for a Change in Their Legal Status – but it would not fit on the badge. So that’s the heading of our manifesto instead', author_id: user1.id, messageable_type: "Channel", messageable_id: channel2.id)
 Message.create(body: 'For all who are interested, just Leeway me directly!', author_id: user1.id, messageable_type: "Channel", messageable_id: channel2.id)
 
 # golden trio
@@ -196,10 +196,11 @@ Message.create(body: 'So meet me at the edge of the forest at the beginning of c
 Message.create(body: 'I am not going into the Forbidden Forest.', author_id: user5.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'When my father hears about this...', author_id: user5.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'Scared, Malfoy?', author_id: user2.id, messageable_type: "Channel", messageable_id: channel7.id)
+Message.create(body: 'Of course not!', author_id: user5.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'Yeah? Then quit whining', author_id: user3.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'Alright, settle down', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'What kind of surprise, Hagrid?', author_id: user1.id, messageable_type: "Channel", messageable_id: channel7.id)
-Message.create(body: 'Don\'t worry yourself about it now, just don\'t be late for class', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
+Message.create(body: 'Don\'t worry yourself about it now, but it\'s a good one! Don\'t be late for class you lot, there\'s a lot to do tomorrow', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
 
 
 Permission.destroy_all
