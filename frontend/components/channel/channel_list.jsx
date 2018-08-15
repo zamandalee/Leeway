@@ -12,7 +12,7 @@ class ChannelList extends React.Component {
   }
 
   newChannel() {
-    
+
   }
 
   render() {
@@ -35,6 +35,10 @@ import { logout } from '../../actions/session_actions';
 const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.id],
   channels: Object.values(state.entities.channels)
+});
+
+const mapDispatchToProps = dispatch => ({
+
 });
 
 export default connect(mapStateToProps)(ChannelList);
