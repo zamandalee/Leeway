@@ -14,7 +14,8 @@
 
 .channel-li {
   cursor: pointer;
-  overflow: hidden;
+  max-height: 26px;
+  overflow: auto;
 }
 
 .channel-li:hover {
