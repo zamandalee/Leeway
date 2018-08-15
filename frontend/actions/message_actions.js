@@ -10,14 +10,14 @@ export const createMessage = (message) => {
   };
 };
 
-// export const deleteMessage = (id) => {
-//   return dispatch => {
-//     return MessageApiUtil.deleteMessage(id).then( message => {
-//       return dispatch(removeMessage(message));
-//     });
-//   };
-// };
-//
+export const deleteMessage = (chatId, messageId) => {
+  return dispatch => {
+    return MessageApiUtil.deleteMessage(chatId, messageId).then( message => {
+      return dispatch(removeMessage(message));
+    });
+  };
+};
+
 // export const receiveMessages = (messages) => ({
 //   type: RECEIVE_MESSAGES,
 //   messages

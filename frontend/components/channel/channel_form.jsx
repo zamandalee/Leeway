@@ -27,7 +27,6 @@ class ChannelForm extends React.Component {
     this.props.processForm(this.state).then( () => {
       this.props.history.push('/workspace');
     });
-    //how to select the specific channel
   }
 
   render() {

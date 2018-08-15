@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { createChannel } from '../../actions/channel_actions';
+import { selectChannel } from '../../actions/session_actions';
 import ChannelForm from './channel_form';
 
 const mapStateToProps = state => ({
@@ -10,7 +11,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: channel => dispatch( createChannel(channel) )
+    processForm: channel => dispatch( createChannel(channel) ),
+    selectChannel: id => dispatch( selectChannel(id) )
   };
 };
 

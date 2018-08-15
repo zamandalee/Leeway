@@ -1,4 +1,5 @@
 import * as ChannelApiUtil from '../util/channel_api_util';
+import { selectChannel } from './session_actions';
 
 export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
@@ -23,7 +24,9 @@ export const fetchChannel = (id) => {
 export const createChannel = (channel) => {
   return dispatch => {
     return ChannelApiUtil.createChannel(channel).then( newChannel => {
-      return dispatch(receiveChannel(newChannel));
+      dispatch(receiveChannel(newChannel));
+      //always select that Channel so its messages render when created
+      dispatch(selectChannel(newChannel.id));
     });
   };
 };

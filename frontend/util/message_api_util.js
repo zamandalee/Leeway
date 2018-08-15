@@ -1,14 +1,20 @@
 export const createMessage = (message) => {
+  let urlText = (message.messageable_type === 'Channel') ? 'channels' : 'direct_messages';
   return (
     $.ajax({
       method: 'POST',
-      url: `/api/channels/${message.messageable_id}/messages`,
+      url: `/api/${urlText}/${message.messageable_id}/messages`,
       data: {message}
     })
   );
 };
 
-// export const deleteMessage = (id) => ({
-//   method: 'DELETE',
-//   url: `/api/channels/:channel_id/messages/${id}`
-// });
+export const deleteMessage = (message) => {
+  let urlText = (message.messageable_type === 'Channel') ? 'channels' : 'direct_messages';
+  return (
+    $.ajax({
+      method: 'DELETE',
+      url: `/api/${urlText}/${message.messageable_id}/messages/${message.id}`
+    })
+  );
+};

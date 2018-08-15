@@ -7,6 +7,8 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      @user.photo.attach(io: File.open("app/assets/images/profpic17.png"), filename: "profpic17.png")
+      Permission.create(user_id: @user.id, channel_id: 2)
       login(@user)
       render :show
     else
