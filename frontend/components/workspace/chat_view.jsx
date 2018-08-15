@@ -13,9 +13,10 @@ class ChatView extends React.Component {
   }
 
   render() {
+    const { channels, selectedChannelId } = this.props;
     return (
       <div className="chat-col">
-        <div className="title"><h1>Channel Title</h1></div>
+        <div className="title"><h1>{channels[selectedChannelId].title}</h1></div>
         <div className="messaging">
           {this.renderMessageFeed()}
           <MessageInputContainer />
@@ -25,9 +26,9 @@ class ChatView extends React.Component {
   }
 }
 
-const mapStateToProps = ({ entities, entities: {channels} }) => ({
+const mapStateToProps = ({ entities: {channels}, session : {selectedChannelId} }) => ({
   channels: Object.values(channels),
-  currentChat: entities.channels.first
+  selectedChannelId
 });
 
 export default connect(mapStateToProps)(ChatView);

@@ -10,9 +10,11 @@ class IndexSidebar extends React.Component {
     render() {
         return (
             <div className="index-col">
-              <h1>Hogwarts</h1>
-              <h2>{this.props.currentUser.username}</h2>
-              <button className="index-logout-button" onClick={this.props.logout}>Logout</button>
+              <div className="general-sidebar">
+                  <h1>Hogwarts</h1>
+                  <h2>{this.props.currentUser.username}</h2>
+                  <button className="index-logout-button" onClick={this.props.logout}>Logout</button>
+              </div>
               <ChannelList />
             </div>
         );

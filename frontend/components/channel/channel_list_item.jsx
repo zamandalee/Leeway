@@ -19,8 +19,8 @@ class ChannelListItem extends React.Component {
     const selected = (channel.id === selectedChannelId ? "selected-channel" : "");
 
     return (
-      <div className="channel-li" id={selected}>
-        <li key={this.props.key} onClick={this.handleClick}>
+      <div className="channel-li" id={selected} onClick={this.handleClick}>
+        <li key={this.props.key}>
           <button>
             <div className="title-symbol">{this.titleSymbol()}</div>
             <div className="chat-title">{this.props.channel.title}</div>
