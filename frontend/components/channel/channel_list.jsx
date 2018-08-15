@@ -11,10 +11,6 @@ class ChannelList extends React.Component {
     return usersChannels;
   }
 
-  newChannel() {
-
-  }
-
   render() {
     return (
       <div className="channel-sidebar">

@@ -7,7 +7,7 @@ class MessageFeed extends React.Component {
     super(props);
   }
 
-  createSocket() {
+  createSocket(channelId) {
     let cable;
     if (process.env.NODE_ENV !== 'production') {
       cable = Cable.createConsumer('http://localhost:3000/cable');
@@ -16,7 +16,7 @@ class MessageFeed extends React.Component {
     }
     this.chats = cable.subscriptions.create({
       channel: "MessagesChannel",
-      messageable_id: this.props.currentChat.id //this will be sent to messages_channel's params
+      messageable_id: channelId //this will be sent to messages_channel's params
     }, {
       connected: () => {
         console.log("CONNECTED!");
@@ -25,7 +25,7 @@ class MessageFeed extends React.Component {
         console.log("---DISCONNECTED---");
       },
       received: (data) => { //data passed from js/channels/messages.js.erb
-        data.messageableId = this.props.currentChat.id; //LOOK AT
+        data.messageable_id = channelId; //LOOK AT
         console.log(data);
         this.props.receiveMessage(data);
       }
@@ -35,7 +35,7 @@ class MessageFeed extends React.Component {
   componentDidMount() {
     this.props.channels.map( (channel) => {
       this.props.fetchChannel(channel.id);
-      this.createSocket();
+      this.createSocket(channel.id);
     });
   }
 
@@ -75,13 +75,14 @@ import { fetchChannel } from '../../actions/channel_actions';
 import MessageInputContainer from '../message/message_input_container';
 
 
-const mapStateToProps = ({ entities, entities: { channels }, session }) => ({
-  currentChat: channels[session.selectedChannelId],
+const mapStateToProps = ({ entities, entities: { channels }, session }) => {
+  // console.log(entities.messages);
+  return ({currentChat: channels[session.selectedChannelId],
   channels: Object.values(channels),
   messages: entities.messages,
-  users: entities.users
-  //need messages, bc upon change in messages, will rerender -> live
-});
+  users: entities.users});
+  //need messages, bc upon change in messages, will rerender -> live;
+};
 
 const mapDispatchToProps = dispatch => ({
   receiveMessage: message => dispatch(receiveMessage(message)),

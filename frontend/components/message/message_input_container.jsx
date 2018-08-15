@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { createMessage } from '../../actions/message_actions';
 import MessageInput from './message_input';
 
-export const mapStateToProps = ({ session, entities }) => ({
-  currentChat: entities.channels[1]
+export const mapStateToProps = ({ session }) => ({
+  currentChatId: session.selectedChannelId
 });
 
 export const mapDispatchToProps = dispatch => ({

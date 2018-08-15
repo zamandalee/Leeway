@@ -1,9 +1,10 @@
 import React from 'react';
+import { merge } from 'lodash';
 
 class MessageInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {body: '', messageable_type: 'Channel', messageable_id: 1};
+    this.state = {body: '', messageable_type: 'Channel'};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,7 +26,8 @@ class MessageInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createMessage(this.state);
+    const message = merge({}, this.state, {messageable_id: this.props.currentChatId});
+    this.props.createMessage(message);
     this.setState({body: ''}); //have this until you're switching between channels
   }
 
