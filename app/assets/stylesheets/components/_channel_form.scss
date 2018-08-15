@@ -4,15 +4,18 @@
 
   margin: auto;
   max-width: 630px;
-  padding: 100px 0;
+  padding: 80px 0;
   line-height: 2;
 
   font-family: 'Lato', sans-serif;
 }
 
-// .x-button {
-//   font-size:
-// }
+.x-button {
+  padding: 0;
+  margin: 0;
+  font-size: 70px;
+  text-align: right;
+}
 
 .form-title {
   height: 60px;
@@ -21,13 +24,14 @@
 }
 
 .channel p {
+  margin-top: 10px;
   font-size: 15px;
   font-weight: lighter;
   color: #a0a0a0;
 }
 
 .channel-form h2 {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 20px;
 }
 
@@ -36,7 +40,7 @@
 }
 
 .title-input {
-  width: 100%;
+  width: calc(100% - 32px);
   padding: 5px 15px;
   border: 1px solid #919193;
   border-radius: 5px;
@@ -45,11 +49,10 @@
 
 .channel-form-buttons {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 20px;
 
   font-size: 20px;
   font-weight: bold;
-  float: right;
 }
 
 .cancel-button, .submit-button {
