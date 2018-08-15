@@ -1,0 +1,24 @@
+$index-purple: #4D394B;
+$index-gray: #cac4c9;
+
+.index-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  height: 100vh;
+
+  background-color: $index-purple;
+  color: $index-gray;
+  font-size: 16px;
+}
+
+.index-col h1 {
+  padding: 5px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.index-logout-button {
+  font-size: 14px;
+}

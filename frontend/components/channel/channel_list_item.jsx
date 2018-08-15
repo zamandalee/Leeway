@@ -10,16 +10,21 @@ class ChannelListItem extends React.Component {
     this.props.selectChannel(this.props.channel.id);
   }
 
-  selected() {
-    const { channel, selectedChannelId } = this.props;
-    return channel.id === selectedChannelId ? "selected-channel" : "";
+  titleSymbol() {
+    return "#";
   }
 
   render() {
+    const { channel, selectedChannelId } = this.props;
+    const selected = (channel.id === selectedChannelId ? "selected-channel" : "");
+
     return (
-      <div className="channel-li" id={this.selected()}>
+      <div className="channel-li" id={selected}>
         <li key={this.props.key} onClick={this.handleClick}>
-          <button>{this.props.channel.title}</button>
+          <button>
+            <div className="title-symbol">{this.titleSymbol()}</div>
+            <div className="chat-title">{this.props.channel.title}</div>
+          </button>
         </li>
       </div>
     );

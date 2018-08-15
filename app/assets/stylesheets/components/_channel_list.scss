@@ -1,0 +1,39 @@
+.channel-sidebar {
+  line-height: 26px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.channel-sidebar h2 {
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.channel-li:hover {
+  background: #3E313C;
+}
+
+.channel-li:active {
+  background: #4C9689;
+}
+
+#selected-channel {
+  background: #4C9689;
+
+}
+
+.channel-li button {
+  display: flex;
+  flex-direction: row;
+}
+
+.title-symbol {
+  margin-right: 5px;
+  color: #969096;
+}
+
+.channel-li li {
+  overflow: hidden;
+}
+
+// padding: 10px 15px;
