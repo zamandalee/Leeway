@@ -18,7 +18,7 @@ class ChannelList extends React.Component {
   render() {
     return (
       <div className="channel-sidebar">
-        <h2 onClick={this.newChannel}>Channels</h2>
+        <h2 onClick={this.props.createChannelModal}>Channels</h2>
         <div className="channel-ul">
           <ul>
             {this.visibleChannels()}
@@ -30,7 +30,7 @@ class ChannelList extends React.Component {
 }
 
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { createChannelModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.id],
@@ -38,7 +38,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  createChannelModal: () => dispatch(createChannelModal()),
 });
 
 export default connect(mapStateToProps)(ChannelList);
