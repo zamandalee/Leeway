@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ChannelListItem from './channel_list_item';
 
 class ChannelList extends React.Component {
@@ -14,7 +15,12 @@ class ChannelList extends React.Component {
   render() {
     return (
       <div className="channel-sidebar">
-        <h2 onClick={this.props.createChannelModal}>Channels</h2>
+        <div className="channels-header">
+          <h2>
+            Channels
+            <Link className="create-channel-button" to="/channels/new">&oplus;</Link>
+          </h2>
+        </div>
         <div className="channel-ul">
           <ul>
             {this.visibleChannels()}

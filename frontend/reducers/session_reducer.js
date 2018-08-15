@@ -2,7 +2,8 @@ import { merge } from 'lodash';
 
 import {
   RECEIVE_CURRENT_USER,
-  LOGOUT_CURRENT_USER
+  LOGOUT_CURRENT_USER,
+  RECEIVE_ERRORS
 } from '../actions/session_actions';
 import { SELECT_CHANNEL } from '../actions/session_actions';
 
@@ -21,6 +22,7 @@ const sessionReducer = (state = {id: null, selectedChannelId: 2}, action) => {
       return newState;
     case SELECT_CHANNEL:
       return merge( {}, state, {selectedChannelId: action.id});
+    case RECEIVE_ERRORS:
     default:
       return state;
   }

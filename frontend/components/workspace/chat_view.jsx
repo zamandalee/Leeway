@@ -16,7 +16,7 @@ class ChatView extends React.Component {
     const { channels, selectedChannelId } = this.props;
     return (
       <div className="chat-col">
-        <div className="workspace-title"><h1>{channels[selectedChannelId - 1].title}</h1></div>
+        <div className="workspace-title"><h1>{`#${channels[selectedChannelId - 1].title}`}</h1></div>
         <div className="messaging">
           {this.renderMessageFeed()}
           <MessageInputContainer />

@@ -1,5 +1,5 @@
 import React from 'react';
-// implement user search later
+import { Link } from 'react-router-dom';
 
 class ChannelForm extends React.Component {
   constructor(props) {
@@ -8,6 +8,11 @@ class ChannelForm extends React.Component {
       title: this.props.title,
       private: this.props.private
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.titleInput.focus();
   }
 
   update(field) {
@@ -18,34 +23,38 @@ class ChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.state);
+    console.log("STATE HEREREEEEEEEEEEEE", this.state);
+    this.props.processForm(this.state).then( () => {
+      this.props.history.push('/workspace');
+    });
+    //how to select the specific channel
   }
 
   render() {
     return (
-      <div className="channel-form">
-        <form onSubmit={this.handleSubmit}>
-          <h1 className="form-title">{this.props.formType}</h1>
-          <p>"Channels are where your members communicate. They're best when organized around a topic - #leads, for example."</p>
+      <div className="channel">
+        <h1 className="form-title">{this.props.formType}</h1>
+        <p>Channels are where your members communicate. They are best when organized around a topic — #leads, for example.</p>
 
+        <form className="channel-form" onSubmit={this.handleSubmit}>
           <label>
             <h2>Title</h2>
             <input
+              type="text"
               className="title-input"
-              type='text'
-              placeholder='#  e.g. leads'
+              onChange={this.update("title")}
               value={this.state.title}
-              onChange={this.update('title')}>
-            </input>
+              placeholder="#  e.g. leads"
+              ref={(input) => { this.titleInput = input; }}
+              />
           </label>
 
-          <div className='buttons-container'>
-            <button className='cancel' onClick={this.props.clearModal}>Cancel</button>
+          <div className="channel-form-buttons">
+            <Link className="cancel-button" to="/workspace">Cancel</Link>
 
             <button
-              className='submit'
-              disabled={this.state.title}
-              onClick={this.submit}>
+              className="submit-button"
+              disabled={!this.state.title}>
               {this.props.formType}
             </button>
           </div>
@@ -55,3 +64,5 @@ class ChannelForm extends React.Component {
   }
 
 }
+
+export default ChannelForm;

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  validate :ensure_photo
+  # validate :ensure_photo
 
   has_many :messages,
     foreign_key: :author_id,

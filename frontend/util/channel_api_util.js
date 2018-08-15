@@ -11,3 +11,11 @@ export const fetchChannel = (id) => {
     url: `/api/channels/${id}`
   });
 };
+
+export const createChannel = (channel) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/channels`,
+    data: {channel}
+  });
+};

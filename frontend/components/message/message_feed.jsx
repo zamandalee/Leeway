@@ -25,7 +25,7 @@ class MessageFeed extends React.Component {
         console.log("---DISCONNECTED---");
       },
       received: (data) => { //data passed from js/channels/messages.js.erb
-        data.messageable_id = channelId; //LOOK AT
+        data.messageable_id = channelId;
         console.log(data);
         this.props.receiveMessage(data);
       }
@@ -76,7 +76,6 @@ import MessageInputContainer from '../message/message_input_container';
 
 
 const mapStateToProps = ({ entities, entities: { channels }, session }) => {
-  // console.log(entities.messages);
   return ({currentChat: channels[session.selectedChannelId],
   channels: Object.values(channels),
   messages: entities.messages,

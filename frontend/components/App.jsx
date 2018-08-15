@@ -11,6 +11,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import SplashContent from './splash/splash_content';
 import Workspace from './workspace/workspace';
+import ChannelCreateContainer from './channel/channel_create_container';
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
       <ProtectedRoute path="/workspace" component={Workspace} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute path="/channels/new" component={ChannelCreateContainer} />
       <Route exact path="/" component={SplashContent} />
       <Redirect to="/" />
     </Switch>
