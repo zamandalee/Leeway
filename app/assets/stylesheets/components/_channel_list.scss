@@ -3,13 +3,32 @@
   font-size: 16px;
 }
 
-.channel-sidebar h2, .channel-li {
+.channel-li {
   padding: 0px 15px;
 }
 
-.channel-sidebar h2 {
-  font-weight: 400;
+.channels-header {
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
   margin-top: 30px;
+}
+
+.channel-sidebar h2 {
+  display: inline-block;
+  font-weight: 400;
+}
+
+.create-channel-button {
+  position: absolute;
+  top: 114px;
+  left: 187px;
+  font-size: 24px;
+  opacity: .64;
+}
+
+.create-channel-button:hover {
+  opacity: 1;
 }
 
 .channel-li {
@@ -37,10 +56,6 @@
 }
 
 .title-symbol {
-  margin-right: 5px;
+  margin-right: 4px;
   color: #969096;
-}
-
-.channel-li li {
-  // overflow: hidden;
 }

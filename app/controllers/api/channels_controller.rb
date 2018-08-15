@@ -7,6 +7,7 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
 
     if @channel.save
+      Permission.create(user_id: current_user.id, channel_id: @channel.id)
       render :show
     else
       render json: @channel.errors.full_messages, status: 422

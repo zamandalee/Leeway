@@ -4,13 +4,15 @@
 
   margin: auto;
   max-width: 630px;
+  padding: 100px 0;
+  line-height: 2;
 
   font-family: 'Lato', sans-serif;
-
-  padding: 100px 0;
-
-  line-height: 2;
 }
+
+// .x-button {
+//   font-size:
+// }
 
 .form-title {
   height: 60px;
@@ -35,10 +37,9 @@
 
 .title-input {
   width: 100%;
-
+  padding: 5px 15px;
   border: 1px solid #919193;
   border-radius: 5px;
-  padding: 5px 10px;
   font-size: 20px;
 }
 
@@ -48,6 +49,7 @@
 
   font-size: 20px;
   font-weight: bold;
+  float: right;
 }
 
 .cancel-button, .submit-button {

@@ -14,9 +14,10 @@ class ChatView extends React.Component {
 
   render() {
     const { channels, selectedChannelId } = this.props;
+    console.log(channels[selectedChannelId]);
     return (
       <div className="chat-col">
-        <div className="workspace-title"><h1>{`#${channels[selectedChannelId - 1].title}`}</h1></div>
+        <div className="workspace-title"><h1>{`#${channels[selectedChannelId].title}`}</h1></div>
         <div className="messaging">
           {this.renderMessageFeed()}
           <MessageInputContainer />
@@ -27,7 +28,8 @@ class ChatView extends React.Component {
 }
 
 const mapStateToProps = ({ entities: {channels}, session : {selectedChannelId} }) => ({
-  channels: Object.values(channels),
+  //Object.values(channels) will be an array that starts at 0, messing up selectedChannelId keying in
+  channels: channels,
   selectedChannelId
 });
 

@@ -16,10 +16,8 @@ class ChannelList extends React.Component {
     return (
       <div className="channel-sidebar">
         <div className="channels-header">
-          <h2>
-            Channels
-            <Link className="create-channel-button" to="/channels/new">&oplus;</Link>
-          </h2>
+          <h2>Channels</h2>
+          <Link className="create-channel-button" to="/channels/new">&oplus;</Link>
         </div>
         <div className="channel-ul">
           <ul>

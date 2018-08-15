@@ -31,4 +31,9 @@ $index-gray: #cac4c9;
 
 .index-logout-button {
   font-size: 14px;
+  opacity: .85;
+}
+
+.index-logout-button:hover {
+  opacity: 1;
 }
