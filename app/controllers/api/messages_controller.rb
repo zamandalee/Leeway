@@ -18,7 +18,12 @@ class Api::MessagesController < ApplicationController
   end
 
   def update
-    
+    @message = current_user.messages.find(params[:id])
+    if @message.update_attributes(message_params)
+      render :show
+    else
+      render json: @message.errors.full_messages, status: 422
+    end
   end
 
   def destroy

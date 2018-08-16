@@ -1,4 +1,4 @@
-.delete-message-button- {
+.delete-message-button-,  .edit-message-button-{
   visibility: hidden;
 }
 
@@ -6,7 +6,19 @@
 //   // width: 100%;
 // }
 
-.delete-message-button-visible {
-  font-size: 21px;
+.delete-message-button-visible, .edit-message-button-visible {
+  padding: 0 5px;
   visibility: visible;
+}
+
+.delete-message-button-visible {
+  font-size: 25px;
+}
+
+.edit-message-button-visible {
+  font-size: 18px;
+}
+
+.message-body-editing {
+  visibility: hidden;
 }
