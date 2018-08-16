@@ -14,7 +14,7 @@ class ChannelListItem extends React.Component {
 
   titleSymbol() {
     if( this.props.channel.private ) {
-      return <img src={window.images.lockicon} />;
+      return <div className="lock-title-symbol">&#128274;</div>;
     } else {
       return "#";
     }
@@ -23,6 +23,7 @@ class ChannelListItem extends React.Component {
   render() {
     const { channel, selectedChannelId } = this.props;
     const selected = (channel.id === selectedChannelId ? "selected-channel" : "");
+
     return (
       <div className="channel-li" id={selected} onClick={this.handleClick}>
         <li>
