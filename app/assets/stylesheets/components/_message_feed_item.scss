@@ -29,7 +29,7 @@ img {
   border-radius: 3px;
 }
 
-.message-author, .message-timestamp, .message-body- {
+.message-author, .message-timestamp, .message-body {
   box-sizing: border-box;
 }
 
@@ -46,7 +46,7 @@ img {
   color: $timestamp-gray;
 }
 
-.message-body- {
+.message-body {
   font-size: 15px;
   font-weight: 400;
   color: $body-gray;
@@ -54,3 +54,7 @@ img {
   word-break: break-word;
   line-height: 1.5;
 }
+
+// .message-bodyediting {
+//   display: none;
+// }

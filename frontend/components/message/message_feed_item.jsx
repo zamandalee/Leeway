@@ -12,14 +12,16 @@ import DeleteMessageButton from './delete_message_button';
 class MessageFeedItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {visible: false, editing: false, message: {}};
+    this.state = {visible: false, editing: false, message: this.props.message};
 
     this.hideEditDelete = this.hideEditDelete.bind(this);
     this.showEditDelete = this.showEditDelete.bind(this);
 
-    //which functions do you need to bind? this.setState?
     this.handleEditClick = this.handleEditClick.bind(this);
+    this.editMode = this.editMode.bind(this);
+    this.update = this.update.bind(this);
     this.handleCancelEdit = this.handleCancelEdit.bind(this);
+    this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
     hideEditDelete() {
@@ -32,17 +34,24 @@ class MessageFeedItem extends React.Component {
       }
     }
 
+
     handleEditClick() {
       return e => {
         this.setState({editing: true});
+      };
+    }
+
+    editMode() {
+      if( this.state.editing === true ) {
         return (
           <div className="edit-message">
             <form onSubmit={this.handleEditSubmit}>
               <input
                 className="edit-message-input"
-                onChange={this.update('body')}
-                value={this.props.message.body}/>
+                onChange={this.update}
+                value={this.state.message.body}/>
               <button
+                type="button"
                 className="edit-message-cancel"
                 onClick={this.handleCancelEdit}>
                 Cancel</button>
@@ -52,36 +61,37 @@ class MessageFeedItem extends React.Component {
             </form>
           </div>
         );
-      };
+      } else {
+        return (
+          <div className="message-body">{this.props.message.body}</div>
+        );
+      }
     }
 
-    //HAVE MESSAGE IN LOCAL STATE?? how to transfer data back to MessageFeed?
-    update(field) {
-      return e => {
-        this.setState({message: {
-          [field]: e.target.value,
-          author_id: this.props.currentUserId,
-          messageable_type: this.props.message.messageable_type,
-          messageable_id: this.props.message.messageable_id}
-        });
-      };
+    //when you want to pass param, invoke w param and return func
+    update(e) {
+      this.setState({message: { body: e.target.value} });
     }
 
     handleCancelEdit() {
-      return e => {
-        this.setState( {editing: false} );
-      };
+      this.setState( {editing: false} );
     }
 
     handleEditSubmit(e) {
       e.preventDefault();
-      this.props.updateMessage(this.state.message);
+      const message = { body: this.state.message.body,
+                        id: this.props.message.id,
+                        author_id: this.props.message.author_id,
+                        messageable_type: this.props.message.messageable_type,
+                        messageable_id: this.props.message.messageable_id };
+      this.props.updateMessage(message);
     }
 
 
     render() {
       const { imgSrc, currentUserId, message } = this.props;
       const visibility = this.state.visible ? 'visible' : '';
+      const editing = this.state.editing ? 'edit' : '';
 
       return (
         <li onMouseOver={this.showEditDelete}
@@ -107,7 +117,7 @@ class MessageFeedItem extends React.Component {
                 <div className="message-delete-div"><DeleteMessageButton message={message} visible={this.state.visible}/></div>
               </div>
 
-              <div className={ `message-body-${visibility}` }>{message.body}</div>
+              {this.editMode()}
             </div>
 
           </div>
@@ -120,7 +130,7 @@ import { connect } from 'react-redux';
 import { updateMessage } from '../../actions/message_actions';
 
 const mapDispatchToProps = dispatch => ({
-  updateMessage: message => () => dispatch(updateMessage(message))
+  updateMessage: message => dispatch(updateMessage(message))
 });
 
 export default connect(null, mapDispatchToProps)(MessageFeedItem);
