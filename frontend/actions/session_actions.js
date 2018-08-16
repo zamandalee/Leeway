@@ -4,6 +4,7 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const SELECT_CHANNEL = 'SELECT_CHANNEL';
+export const SELECT_DM = 'SELECT_DM';
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -49,5 +50,10 @@ export const logout = () => (
 
 export const selectChannel = (id) => ({
   type: SELECT_CHANNEL,
+  id
+});
+
+export const selectDM = (id) => ({
+  type: SELECT_DM,
   id
 });

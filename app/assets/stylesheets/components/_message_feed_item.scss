@@ -77,11 +77,15 @@ img {
   margin-top: 5px;
   margin-right: 10px;
   min-height: 21px;
-  min-width: 350px;
+  min-width: calc(100% - 17px);
   padding: 7px;
   border: 1px solid #1543d9;
   box-shadow: 0 0 7px rgba(39,128,248,.15);
   border-radius: 3px;
+}
+
+.edit-buttons {
+  margin-top: 7px;
 }
 
 .edit-message-mode button {
@@ -98,6 +102,7 @@ img {
 
 .edit-message-cancel {
   min-width: 56px;
+  margin-right: 7px;
 }
 
 .edit-message-save {

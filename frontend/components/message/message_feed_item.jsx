@@ -50,14 +50,17 @@ class MessageFeedItem extends React.Component {
                 className="edit-message-input"
                 onChange={this.update}
                 value={this.state.message.body}/>
-              <button
-                type="button"
-                className="edit-message-cancel"
-                onClick={this.handleCancelEdit}>
-                Cancel</button>
-              <button
-                className="edit-message-save">
-                Save Changes</button>
+              <br></br>
+              <div className="edit-buttons">
+                <button
+                  type="button"
+                  className="edit-message-cancel"
+                  onClick={this.handleCancelEdit}>
+                  Cancel</button>
+                <button
+                  className="edit-message-save">
+                  Save Changes</button>
+              </div>
             </form>
           </div>
         );
