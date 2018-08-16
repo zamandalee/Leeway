@@ -1,7 +1,12 @@
 .delete-message-button- {
-  visibility: visible;
+  visibility: hidden;
 }
 
-.delete-message-button-hidden {
-  visibility: hidden;
+// .message-delete-div {
+//   // width: 100%;
+// }
+
+.delete-message-button-visible {
+  font-size: 21px;
+  visibility: visible;
 }

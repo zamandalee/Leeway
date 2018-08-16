@@ -1,12 +1,12 @@
 import React from 'react';
 
 const DeleteMessageButton = props => {
-  const { hide, message } = props;
-  const hiddenClass = hide ? 'hidden' : '';
+  const { visible, message } = props;
+  const visibility = visible ? 'visible' : '';
 
   return (
     <button
-      className={ `delete-message-button-${hiddenClass}` }
+      className={ `delete-message-button-${visibility}` }
       onClick={ props.deleteMessage(message) }>
       &times;
     </button>
