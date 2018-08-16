@@ -82,6 +82,12 @@ channel5 = Channel.create(title: 'gryffindor-house', private: true)
 channel6 = Channel.create(title: 'transfiguration')
 channel7 = Channel.create(title: 'care-of-magical-creatures')
 
+# DM
+dm1 = Channel.create(title: '', is_dm: true)
+dm2 = Channel.create(title: '', is_dm: true)
+dm3 = Channel.create(title: '', is_dm: true)
+
+
 Message.destroy_all
 
 # DA
@@ -206,6 +212,7 @@ Message.create(body: 'Don\'t be late for class you lot, there\'s a lot to do tom
 
 
 Permission.destroy_all
+# CHANNELS
 # DA
 Permission.create(user_id: user1.id, channel_id: channel1.id)
 Permission.create(user_id: user2.id, channel_id: channel1.id)
@@ -281,4 +288,7 @@ Permission.create(user_id: user5.id, channel_id: channel7.id)
 Permission.create(user_id: user8.id, channel_id: channel7.id)
 Permission.create(user_id: user9.id, channel_id: channel7.id)
 Permission.create(user_id: user11.id, channel_id: channel7.id)
+Permission.create(user_id: user12.id, channel_id: channel7.id)
+
+# DIRECT MESSAGES
 Permission.create(user_id: user12.id, channel_id: channel7.id)

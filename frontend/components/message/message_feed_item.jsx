@@ -105,7 +105,7 @@ class MessageFeedItem extends React.Component {
 
             <div className="message-content">
 
-              <header class="message-header">
+              <header className="message-header">
                 <div className="author-timestamp-div">
                   <span className="message-author">{message.author}</span>
                   <span className="message-timestamp">{message.timestamp}</span>

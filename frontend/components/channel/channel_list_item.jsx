@@ -29,7 +29,7 @@ class ChannelListItem extends React.Component {
         <li>
           <button>
             <div className="title-symbol" id={`${selected}-symbol`}>{this.titleSymbol()}</div>
-            <div className="chat-title">{this.props.channel.title}</div>
+            <div className="chat-title">{channel.title}</div>
           </button>
         </li>
       </div>

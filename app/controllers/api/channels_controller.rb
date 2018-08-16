@@ -6,13 +6,25 @@ class Api::ChannelsController < ApplicationController
   def create
     @channel = Channel.new(channel_params)
 
+    # if dm, set title to a formatted string of users involved
     if @channel.is_dm
-      users = @channel.users.format
-      @channel.title = users
+      users = []
+      @channel.users.map do |dmUser|
+        users.push(dmUser.format_username)
+      end
+      @channel.title = users.join(", ")
     end
 
     if @channel.save
-      Permission.create(user_id: current_user.id, channel_id: @channel.id)
+      #create permissions when that channel is created
+      if @channel.is_dm
+        @channel.users.map do |dmUser|
+          Permission.create(user_id: dmUser.id, channel_id: @channel.id)
+        end
+      else
+        Permission.create(user_id: current_user.id, channel_id: @channel.id)
+      end
+
       render :show
     else
       render json: @channel.errors.full_messages, status: 422

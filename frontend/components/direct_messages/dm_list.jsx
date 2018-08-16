@@ -5,8 +5,10 @@ import DMListItem from './dm_list_item';
 class DMList extends React.Component {
 
   visibleDMs() {
-    const usersDMs = this.props.directMessages.map( (dm, idx) => {
-      return <DMListItem dm={dm} key={idx} />;
+    const usersDMs = this.props.channels.map( (channel, idx) => {
+      if( channel.is_dm ) {
+        return <DMListItem dm={channel} key={idx} />;
+      }
     });
 
     return usersDMs;
@@ -14,12 +16,12 @@ class DMList extends React.Component {
 
   render() {
     return (
-      <div className="dm-sidebar">
-        <div className="dms-header">
+      <div className="channel-sidebar">
+        <div className="channels-header">
           <h2>Direct Messages</h2>
-          <Link className="create-dm-button" to="/directmessages/new">&oplus;</Link>
+          <Link className="create-channel-button" to="/directmessages/new">&oplus;</Link>
         </div>
-        <div className="dm-ul">
+        <div className="channel-ul">
           <ul>
             {this.visibleDMs()}
           </ul>
@@ -32,8 +34,8 @@ class DMList extends React.Component {
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  currentUser: state.entities.users[state.session.id],
-  directMessages: Object.values(state.entities.directMessages)
+  // currentUser: state.entities.users[state.session.id],
+  channels: Object.values(state.entities.channels)
 });
 
 export default connect(mapStateToProps)(DMList);

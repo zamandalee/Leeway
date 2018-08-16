@@ -8,19 +8,24 @@ class DMListItem extends React.Component {
   }
 
   handleClick() {
-    this.props.selectDM(this.props.dm.id);
+    this.props.selectChannel(this.props.dm.id);
   }
 
+//REFACTOR CLASSNAMES TO BE "CHAT" EVERYTHING LATER
   render() {
-    const { channel, selectedChannelId } = this.props;
-    const selected = (channel.id === selectedChannelId ? "selected-channel" : "");
+    const { dm, selectedChannelId } = this.props;
+    const selected = (dm.id === selectedChannelId ? "selected-channel" : "");
+    console.log(dm.user_ids.length);
 
     return (
       <div className="channel-li" id={selected} onClick={this.handleClick}>
         <li>
           <button>
-            <div className="title-symbol" id={`${selected}-symbol`}>{this.titleSymbol()}</div>
-            <div className="chat-title">{this.props.channel.title}</div>
+            <div className="dm-user-num-square" id={`${selected}-dm-symbol`}>
+              {dm.user_ids.length}
+            </div>
+
+            <div className="chat-title">{dm.title}</div>
           </button>
         </li>
       </div>
@@ -32,7 +37,7 @@ import { connect } from 'react-redux';
 import { selectChannel } from '../../actions/session_actions';
 
 const mapStateToProps = ({ entities: {channels}, session }, ownProps) => ({
-  channel: ownProps.channel,
+  dm: ownProps.dm,
   channels: channels,
   selectedChannelId: session.selectedChannelId
 });
