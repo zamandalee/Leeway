@@ -4,7 +4,7 @@
 }
 
 .channel-li {
-  padding: 0px 15px;
+  padding: 0px 12px;
 }
 
 .channels-header {
@@ -53,9 +53,19 @@
 .channel-li button {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .title-symbol {
-  margin-right: 4px;
+  max-height: 26px; //keeps channel title in line even w lock icon
+  max-width: 9px;
+  margin-right: 7px;
   color: #969096;
+}
+
+.channel-li img {
+  max-height: 13px;
+  max-width: 10px;
+  // margin-right: 2px;
+  left: 3px;
 }

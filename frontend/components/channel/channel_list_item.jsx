@@ -3,6 +3,8 @@ import React from 'react';
 class ChannelListItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {lockicon: ""};
+
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -11,7 +13,11 @@ class ChannelListItem extends React.Component {
   }
 
   titleSymbol() {
-    return "#";
+    if( this.props.channel.private ) {
+      return <img src={window.images.lockicon} />;
+    } else {
+      return "#";
+    }
   }
 
   render() {
