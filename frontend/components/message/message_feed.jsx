@@ -1,15 +1,11 @@
 import React from 'react';
 import Cable from 'actioncable';
 import { selectChannelMessages } from '../../actions/selectors';
-import DeleteMessageButton from './delete_message_button';
+import MessageFeedItem from './message_feed_item';
 
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {visible: false};
-
-    this.hideDeleteButton = this.hideDeleteButton.bind(this);
-    this.showDeleteButton = this.showDeleteButton.bind(this);
   }
 
   createSocket(channelId) {
@@ -44,18 +40,8 @@ class MessageFeed extends React.Component {
     });
   }
 
-  hideDeleteButton() {
-    this.setState( {visible: false} );
-  }
-
-  showDeleteButton() {
-    if( this.props.currentUserId === message.author_id ) {
-      this.setState( {visible: true} );
-    }
-  }
-
   render() {
-    const { currentChat, messages, users } = this.props;
+    const { currentUserId, currentChat, messages, users } = this.props;
 
     return (
       <div className="message-feed-div">
@@ -63,23 +49,11 @@ class MessageFeed extends React.Component {
           {
             selectChannelMessages(currentChat.id, messages).map( (message, idx) => {
               return (
-                  <li key={idx} onMouseOver={this.showDeleteButton} onMouseOut={this.hideDeleteButton}>
-                    <div className="message">
-                      <div><img src={users[message.author_id].photoUrl}/></div>
-
-                      <div className="message-content">
-                        <div className="author-timestamp">
-                          <div className="message-author">{message.author}</div>
-                          <div className="message-timestamp">{message.timestamp}</div>
-                        </div>
-
-                        <DeleteMessageButton message={message} visible={this.state.visible}/>
-
-                        <div className="message-body">{message.body}</div>
-                      </div>
-
-                    </div>
-                  </li>
+                <MessageFeedItem
+                  imgSrc={users[message.author_id].photoUrl}
+                  currentUserId={currentUserId}
+                  message={message}
+                  key={idx}/>
               );
             })
           }
