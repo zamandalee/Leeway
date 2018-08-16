@@ -17,6 +17,10 @@ class Api::MessagesController < ApplicationController
     end
   end
 
+  def update
+    
+  end
+
   def destroy
     @message = Message.find(params[:id])
     if @message.delete

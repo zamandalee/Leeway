@@ -37,6 +37,7 @@ class MessageFeedItem extends React.Component {
                 <div className="message-timestamp">{message.timestamp}</div>
 
                 <div className="message-delete-div"><DeleteMessageButton message={message} visible={this.state.visible}/></div>
+                <div className="message-edit-div"><EditMessageButton message={message} visible={this.state.visible}/></div>
               </div>
 
               <div className="message-body">{message.body}</div>

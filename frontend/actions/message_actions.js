@@ -18,6 +18,14 @@ export const deleteMessage = (message) => {
   };
 };
 
+export const updateMessage = (message) => {
+  return dispatch => {
+    return MessageApiUtil.updateMessage(message).then( updatedMessage => {
+      return dispatch(receiveMessage(updatedMessage));
+    });
+  };
+};
+
 // export const receiveMessages = (messages) => ({
 //   type: RECEIVE_MESSAGES,
 //   messages

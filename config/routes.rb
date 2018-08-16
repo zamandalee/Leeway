@@ -7,11 +7,11 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :channels, only: [:index, :show, :create, :update, :destroy] do
-      resources :messages, only: [:create, :destroy]
+      resources :messages, only: [:create, :update, :destroy]
     end
 
     resources :direct_messages, only: [:index, :show, :create, :destroy] do
-      resources :messages, only: [:create, :destroy]
+      resources :messages, only: [:create, :update, :destroy]
     end
 
     resources :permissions, only: [:index]
