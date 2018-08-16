@@ -1,20 +1,17 @@
 import React from 'react';
 
-class DeleteMessageButton extends React.Component {
+const DeleteMessageButton = props => {
+  const { hide, message } = props;
+  const hiddenClass = hide ? 'hidden' : '';
 
-  render() {
-    const visible = this.props.visible ? "" : "hidden";
-
-    return (
-      <button
-        className={`delete-message-button ${visible}`}
-        onClick={this.props.deleteMessage(this.props.message)}>
-        &times;
-      </button>
-    );
-  }
-
-}
+  return (
+    <button
+      className={ `delete-message-button-${hiddenClass}` }
+      onClick={ props.deleteMessage(message) }>
+      &times;
+    </button>
+  );
+};
 
 import { connect } from 'react-redux';
 import { deleteMessage } from '../../actions/message_actions';
