@@ -83,9 +83,9 @@ channel6 = Channel.create(title: 'transfiguration')
 channel7 = Channel.create(title: 'care-of-magical-creatures')
 
 # DM
-dm1 = Channel.create(title: '', is_dm: true)
-dm2 = Channel.create(title: '', is_dm: true)
-dm3 = Channel.create(title: '', is_dm: true)
+dm1 = Channel.create(title: 'Hermione Granger, Ron Weasley, Rubeus Hagrid', is_dm: true)
+dm2 = Channel.create(title: 'Oliver Wood', is_dm: true)
+dm3 = Channel.create(title: 'Colin Creevey', is_dm: true)
 
 
 Message.destroy_all
@@ -291,4 +291,13 @@ Permission.create(user_id: user11.id, channel_id: channel7.id)
 Permission.create(user_id: user12.id, channel_id: channel7.id)
 
 # DIRECT MESSAGES
-Permission.create(user_id: user12.id, channel_id: channel7.id)
+Permission.create(user_id: user1.id, channel_id: dm1.id)
+Permission.create(user_id: user2.id, channel_id: dm1.id)
+Permission.create(user_id: user3.id, channel_id: dm1.id)
+Permission.create(user_id: user12.id, channel_id: dm1.id)
+
+Permission.create(user_id: user2.id, channel_id: dm2.id)
+Permission.create(user_id: user10.id, channel_id: dm2.id)
+
+Permission.create(user_id: user2.id, channel_id: dm3.id)
+Permission.create(user_id: user16.id, channel_id: dm3.id)

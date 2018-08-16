@@ -10,7 +10,9 @@ class Api::ChannelsController < ApplicationController
     if @channel.is_dm
       users = []
       @channel.users.map do |dmUser|
-        users.push(dmUser.format_username)
+        unless dmUser.id == current_user.id
+          users.push(dmUser.format_username)
+        end
       end
       @channel.title = users.join(", ")
     end

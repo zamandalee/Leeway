@@ -15,7 +15,6 @@
 }
 
 .channel-sidebar h2 {
-  display: inline-block;
   font-weight: 400;
 }
 
@@ -34,7 +33,8 @@
 .channel-li {
   cursor: pointer;
   max-height: 26px;
-  overflow: auto;
+  max-width: 200px;
+  overflow: hidden;
 }
 
 .channel-li:hover {

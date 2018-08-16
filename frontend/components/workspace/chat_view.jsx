@@ -12,12 +12,25 @@ class ChatView extends React.Component {
     }
   }
 
+  chatTitle() {
+    const { channels, selectedChannelId } = this.props;
+
+    if(channels[selectedChannelId].is_dm) {
+      return <div className="workspace-title">
+               <h1>{`${channels[selectedChannelId].title}`}</h1>
+             </div>;
+    } else {
+      return <div className="workspace-title">
+               <h1>{`#${channels[selectedChannelId].title}`}</h1>
+             </div>;
+    }
+  }
+
   render() {
     const { channels, selectedChannelId } = this.props;
-    console.log(channels[selectedChannelId]);
     return (
       <div className="chat-col">
-        <div className="workspace-title"><h1>{`#${channels[selectedChannelId].title}`}</h1></div>
+        {this.chatTitle()}
         <div className="messaging">
           {this.renderMessageFeed()}
           <MessageInputContainer />

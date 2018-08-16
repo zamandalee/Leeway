@@ -6,6 +6,7 @@ class DMList extends React.Component {
 
   visibleDMs() {
     const usersDMs = this.props.channels.map( (channel, idx) => {
+      console.log(channel);
       if( channel.is_dm ) {
         return <DMListItem dm={channel} key={idx} />;
       }
@@ -21,6 +22,7 @@ class DMList extends React.Component {
           <h2>Direct Messages</h2>
           <Link className="create-channel-button" to="/directmessages/new">&oplus;</Link>
         </div>
+
         <div className="channel-ul">
           <ul>
             {this.visibleDMs()}

@@ -5,13 +5,15 @@ import ChannelListItem from './channel_list_item';
 class ChannelList extends React.Component {
 
   visibleChannels() {
-    const orderedChannels = {};
-    this.props.channels.map( (channel) => {
-      orderedChannels.push()
-    });
+    //the the channels alphabetically
+    let orderedChannels = Object.values(this.props.channels);
+    orderedChannels = orderedChannels.sort( (a, b) => a.title > b.title );
+    // debugger;
 
-    const usersChannels = this.props.channels.map( (channel, idx) => {
-      return <ChannelListItem channel={channel} key={idx} />;
+    const usersChannels = orderedChannels.map( (channel, idx) => {
+      if( !channel.is_dm ) {
+        return <ChannelListItem channel={channel} key={idx} />;
+      }
     });
 
     return usersChannels;
