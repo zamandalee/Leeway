@@ -7,14 +7,14 @@ $button-green: #108851;
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 9px;
 }
 
 img {
   display: inline-block;
   width: 36px;
   height: 36px;
-  padding-top: 7px;
+  margin-top: 7px;
   margin-right: 8px;
   border-radius: 3px;
 }
@@ -61,7 +61,7 @@ img {
 }
 
 .message-timestamp {
-  padding: 4px 5px;
+  padding: 0 8px;
 
   font-size: 12px;
   font-weight: 400;
