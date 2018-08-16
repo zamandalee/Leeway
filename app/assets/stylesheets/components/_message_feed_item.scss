@@ -1,5 +1,6 @@
 $timestamp-gray: #717274;
 $body-gray: #2c2d30;
+$button-green: #108851;
 
 // INDIVIDUAL MESSAGES
 .message {
@@ -11,6 +12,7 @@ $body-gray: #2c2d30;
 .message-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding-left: 7px;
 }
 
@@ -19,7 +21,16 @@ $body-gray: #2c2d30;
   flex-direction: row;
   align-items: center;
   padding-bottom: 2px;
-  width: 100%
+  width: 100%;
+  justify-content: space-between;
+}
+
+.author-timestamp-div {
+  flex-direction: row;
+}
+
+.edit-delete-div {
+  flex-direction: row;
 }
 
 img {
@@ -31,6 +42,8 @@ img {
 
 .message-author, .message-timestamp, .message-body {
   box-sizing: border-box;
+  display: inline-block;
+
 }
 
 .message-author {
@@ -39,6 +52,7 @@ img {
 }
 
 .message-timestamp {
+
   padding: 0 5px;
 
   font-size: 12px;
@@ -55,6 +69,47 @@ img {
   line-height: 1.5;
 }
 
-// .message-bodyediting {
-//   display: none;
-// }
+
+.edit-message-mode {
+  font-size: 15px;
+}
+
+.edit-message-form {
+
+}
+
+.edit-message-input {
+  margin-top: 5px;
+  margin-right: 10px;
+  min-height: 21px;
+  min-width: 350px;
+  padding: 7px;
+  border: 1px solid #1543d9;
+  box-shadow: 0 0 7px rgba(39,128,248,.15);
+  border-radius: 3px;
+}
+
+.edit-message-mode button {
+  height: 28px;
+  padding: 0 12px 1px;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(44,45,48,.3);
+}
+
+.edit-message-cancel {
+  min-width: 56px;
+}
+
+.edit-message-save {
+  color: white;
+  background: $button-green;
+}
+
+.message-edit-div, .message-delete-div {
+  display: inline-block;
+}

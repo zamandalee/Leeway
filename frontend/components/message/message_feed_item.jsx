@@ -29,7 +29,7 @@ class MessageFeedItem extends React.Component {
     }
 
     showEditDelete() {
-      if( this.props.currentUserId === this.props.message.author_id ) {
+      if( this.props.currentUserId === this.props.message.author_id && !this.state.editing ) {
         this.setState( {visible: true} );
       }
     }
@@ -44,8 +44,8 @@ class MessageFeedItem extends React.Component {
     editMode() {
       if( this.state.editing === true ) {
         return (
-          <div className="edit-message">
-            <form onSubmit={this.handleEditSubmit}>
+          <div className="edit-message-mode">
+            <form className="edit-message-form" onSubmit={this.handleEditSubmit}>
               <input
                 className="edit-message-input"
                 onChange={this.update}
@@ -85,6 +85,7 @@ class MessageFeedItem extends React.Component {
                         messageable_type: this.props.message.messageable_type,
                         messageable_id: this.props.message.messageable_id };
       this.props.updateMessage(message);
+      this.setState( {editing: false} );
     }
 
 
@@ -103,18 +104,24 @@ class MessageFeedItem extends React.Component {
             <div className="message-content">
 
               <div className="author-timestamp-deletebttn">
-                <div className="message-author">{message.author}</div>
-                <div className="message-timestamp">{message.timestamp}</div>
-
-                <div className="message-edit-div">
-                  <button
-                    className={ `edit-message-button-${visibility}` }
-                    onClick={ this.handleEditClick() }>
-                    &#x270E;
-                  </button>
+                <div className="author-timestamp-div">
+                  <div className="message-author">{message.author}</div>
+                  <div className="message-timestamp">{message.timestamp}</div>
                 </div>
 
-                <div className="message-delete-div"><DeleteMessageButton message={message} visible={this.state.visible}/></div>
+                <div className="edit-delete-div">
+
+                  <div className="message-edit-div">
+                    <button
+                      className={ `edit-message-button-${visibility}` }
+                      onClick={ this.handleEditClick() }>
+                      &#x270E;
+                    </button>
+                  </div>
+
+                  <div className="message-delete-div"><DeleteMessageButton message={message} visible={this.state.visible}/></div>
+                </div>
+
               </div>
 
               {this.editMode()}
