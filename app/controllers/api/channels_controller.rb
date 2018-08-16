@@ -6,6 +6,11 @@ class Api::ChannelsController < ApplicationController
   def create
     @channel = Channel.new(channel_params)
 
+    if @channel.is_dm
+      users = @channel.users.format
+      @channel.title = users
+    end
+
     if @channel.save
       Permission.create(user_id: current_user.id, channel_id: @channel.id)
       render :show

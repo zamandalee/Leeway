@@ -41,4 +41,4 @@ const mapDispatchToProps = dispatch => ({
   selectChannel: id => dispatch(selectChannel(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChannelListItem);
+export default connect(mapStateToProps, mapDispatchToProps)(DMListItem);
