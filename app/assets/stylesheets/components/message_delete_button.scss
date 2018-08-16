@@ -7,16 +7,18 @@
 // }
 
 .delete-message-button-visible, .edit-message-button-visible {
+  max-width: 21px;
+  width: 21px;
   padding: 0 5px;
   visibility: visible;
 }
 
 .delete-message-button-visible {
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .edit-message-button-visible {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .message-body-editing {

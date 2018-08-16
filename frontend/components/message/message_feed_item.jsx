@@ -98,22 +98,20 @@ class MessageFeedItem extends React.Component {
       const editing = this.state.editing ? 'edit' : '';
 
       return (
-        <li onMouseOver={this.showEditDelete}
+        <li className="message"
+          onMouseOver={this.showEditDelete}
           onMouseOut={this.hideEditDelete}>
-
-          <div className="message">
             <div><img src={imgSrc}/></div>
 
             <div className="message-content">
 
-              <div className="author-timestamp-delete-edit">
+              <header class="message-header">
                 <div className="author-timestamp-div">
-                  <div className="message-author">{message.author}</div>
-                  <div className="message-timestamp">{message.timestamp}</div>
+                  <span className="message-author">{message.author}</span>
+                  <span className="message-timestamp">{message.timestamp}</span>
                 </div>
 
                 <div className="edit-delete-div">
-
                   <div className="message-edit-div">
                     <button
                       className={ `edit-message-button-${visibility}` }
@@ -124,13 +122,11 @@ class MessageFeedItem extends React.Component {
 
                   <div className="message-delete-div"><DeleteMessageButton message={message} visible={this.state.visible}/></div>
                 </div>
-
-              </div>
+              </header>
 
               {this.editMode()}
             </div>
 
-          </div>
         </li>
       );
     }

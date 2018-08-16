@@ -6,13 +6,16 @@ $button-green: #108851;
 .message {
   display: flex;
   flex-direction: row;
-  margin-bottom: 9px;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 img {
-  margin: 0 2px;
+  display: inline-block;
   width: 36px;
   height: 36px;
+  padding-top: 7px;
+  margin-right: 8px;
   border-radius: 3px;
 }
 
@@ -20,29 +23,36 @@ img {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-left: 7px;
+  padding-left: 5px;
 }
 
-.author-timestamp-delete-edit {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-bottom: 2px;
-  width: 100%;
-  justify-content: space-between;
+.message-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .author-timestamp-div, .edit-delete-div {
+  display: flex;
   flex-direction: row;
 }
 
-.message-edit-div, .message-delete-div {
-  display: inline-block;
+.author-timestamp-div {
+  height: 28px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.edit-delete-div {
+  align-items: center;
+  margin-right: 20px;
 }
 
 .message-author, .message-timestamp, .message-body {
   box-sizing: border-box;
-  display: inline-block;
 }
 
 .message-author {
@@ -51,7 +61,7 @@ img {
 }
 
 .message-timestamp {
-  padding: 0 5px;
+  padding: 4px 5px;
 
   font-size: 12px;
   font-weight: 400;
@@ -64,7 +74,7 @@ img {
   color: $body-gray;
 
   word-break: break-word;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 //EDITING A MESSAGE
@@ -86,8 +96,6 @@ img {
 
 .edit-buttons {
   margin-top: 7px;
-  // max-height: 19px;
-  z-index: 10;
 }
 
 .edit-message-mode button {
