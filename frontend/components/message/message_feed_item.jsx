@@ -45,7 +45,7 @@ class MessageFeedItem extends React.Component {
       if( this.state.editing === true ) {
         return (
           <div className="edit-message-mode">
-            <form className="edit-message-form" onSubmit={this.handleEditSubmit}>
+            <form onSubmit={this.handleEditSubmit}>
               <input
                 className="edit-message-input"
                 onChange={this.update}
@@ -103,7 +103,7 @@ class MessageFeedItem extends React.Component {
 
             <div className="message-content">
 
-              <div className="author-timestamp-deletebttn">
+              <div className="author-timestamp-delete-edit">
                 <div className="author-timestamp-div">
                   <div className="message-author">{message.author}</div>
                   <div className="message-timestamp">{message.timestamp}</div>

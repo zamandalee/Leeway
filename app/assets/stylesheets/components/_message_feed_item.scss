@@ -9,6 +9,13 @@ $button-green: #108851;
   margin-bottom: 9px;
 }
 
+img {
+  margin: 0 2px;
+  width: 36px;
+  height: 36px;
+  border-radius: 3px;
+}
+
 .message-content {
   display: flex;
   flex-direction: column;
@@ -16,7 +23,7 @@ $button-green: #108851;
   padding-left: 7px;
 }
 
-.author-timestamp-deletebttn {
+.author-timestamp-delete-edit {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,25 +32,17 @@ $button-green: #108851;
   justify-content: space-between;
 }
 
-.author-timestamp-div {
+.author-timestamp-div, .edit-delete-div {
   flex-direction: row;
 }
 
-.edit-delete-div {
-  flex-direction: row;
-}
-
-img {
-  margin: 0 2px;
-  width: 36px;
-  height: 36px;
-  border-radius: 3px;
+.message-edit-div, .message-delete-div {
+  display: inline-block;
 }
 
 .message-author, .message-timestamp, .message-body {
   box-sizing: border-box;
   display: inline-block;
-
 }
 
 .message-author {
@@ -52,7 +51,6 @@ img {
 }
 
 .message-timestamp {
-
   padding: 0 5px;
 
   font-size: 12px;
@@ -69,13 +67,10 @@ img {
   line-height: 1.5;
 }
 
+//EDITING A MESSAGE
 
 .edit-message-mode {
   font-size: 15px;
-}
-
-.edit-message-form {
-
 }
 
 .edit-message-input {
@@ -108,8 +103,4 @@ img {
 .edit-message-save {
   color: white;
   background: $button-green;
-}
-
-.message-edit-div, .message-delete-div {
-  display: inline-block;
 }

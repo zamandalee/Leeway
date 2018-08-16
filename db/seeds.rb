@@ -111,7 +111,8 @@ Message.create(body: 'What?', author_id: user1.id, messageable_type: "Channel", 
 Message.create(body: 'I thought it was a pretty good idea...', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'That\'s an NEWT level charm!', author_id: user9.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'It wasn\'t that challenging once I got the hang of it', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
-Message.create(body: 'Thanks, Hermione!', author_id: user4.id, messageable_type: "Channel", messageable_id: channel1.id)
+Message.create(body: 'Wow, Hermione!', author_id: user4.id, messageable_type: "Channel", messageable_id: channel1.id)
+Message.create(body: 'Yeah, thanks Hermione!', author_id: user2.id, messageable_type: "Channel", messageable_id: channel1.id)
 
 #general
 Message.create(body: 'Welcome!', author_id: user6.id, messageable_type: "Channel", messageable_id: channel2.id)
@@ -200,7 +201,8 @@ Message.create(body: 'Of course not!', author_id: user5.id, messageable_type: "C
 Message.create(body: 'Yeah? Then quit whining', author_id: user3.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'Alright, settle down', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'What kind of surprise, Hagrid?', author_id: user1.id, messageable_type: "Channel", messageable_id: channel7.id)
-Message.create(body: 'Don\'t worry yourself about it now, but it\'s a good one! Don\'t be late for class you lot, there\'s a lot to do tomorrow', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
+Message.create(body: 'Don\'t worry yourself about it now, but it\'s a good one!', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
+Message.create(body: 'Don\'t be late for class you lot, there\'s a lot to do tomorrow', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
 
 
 Permission.destroy_all
