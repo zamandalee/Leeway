@@ -23,7 +23,6 @@ class ChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("STATE HEREREEEEEEEEEEEE", this.state);
     this.props.processForm(this.state).then( () => {
       this.props.history.push('/workspace');
     });

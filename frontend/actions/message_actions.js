@@ -10,10 +10,10 @@ export const createMessage = (message) => {
   };
 };
 
-export const deleteMessage = (chatId, messageId) => {
+export const deleteMessage = (message) => {
   return dispatch => {
-    return MessageApiUtil.deleteMessage(chatId, messageId).then( message => {
-      return dispatch(removeMessage(message));
+    return MessageApiUtil.deleteMessage(message).then( messageResponse => {
+      return dispatch(removeMessage(messageResponse));
     });
   };
 };

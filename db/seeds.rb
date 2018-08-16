@@ -103,7 +103,7 @@ Message.create(body: 'Lol too true', author_id: user14.id, messageable_type: "Ch
 Message.create(body: 'We\'ll be starting with the basics, before doing some of the cool stuff', author_id: user2.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'I\'ve come up with an idea to communicate with each other off Leeway', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'You know, because we\'re not on our computers during the day', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
-Message.create(body: 'What is it?', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
+Message.create(body: 'What is it?', author_id: user11.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'I\'ve put a protean charm on leprechaun gold!', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: 'The serial number will really be the date and time of our next meeting, and when Harry changes the numbers on his coin, ours will all change too', author_id: user1.id, messageable_type: "Channel", messageable_id: channel1.id)
 Message.create(body: '...', author_id: user8.id, messageable_type: "Channel", messageable_id: channel1.id)

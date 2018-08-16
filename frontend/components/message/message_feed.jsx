@@ -1,10 +1,15 @@
 import React from 'react';
 import Cable from 'actioncable';
 import { selectChannelMessages } from '../../actions/selectors';
+import DeleteMessageButton from './delete_message_button';
 
 class MessageFeed extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {visible: false};
+
+    this.hideDeleteButton = this.hideDeleteButton.bind(this);
+    this.showDeleteButton = this.showDeleteButton.bind(this);
   }
 
   createSocket(channelId) {
@@ -39,25 +44,40 @@ class MessageFeed extends React.Component {
     });
   }
 
+  hideDeleteButton() {
+    this.setState( {visible: false} );
+  }
+
+  showDeleteButton() {
+    if( this.props.currentUserId === message.author_id ) {
+      this.setState( {visible: true} );
+    }
+  }
+
   render() {
     const { currentChat, messages, users } = this.props;
+
     return (
       <div className="message-feed-div">
         <ul className="message-feed-ul">
           {
             selectChannelMessages(currentChat.id, messages).map( (message, idx) => {
               return (
-                  <li key={idx}>
+                  <li key={idx} onMouseOver={this.showDeleteButton} onMouseOut={this.hideDeleteButton}>
                     <div className="message">
                       <div><img src={users[message.author_id].photoUrl}/></div>
+
                       <div className="message-content">
                         <div className="author-timestamp">
                           <div className="message-author">{message.author}</div>
                           <div className="message-timestamp">{message.timestamp}</div>
                         </div>
 
+                        <DeleteMessageButton message={message} visible={this.state.visible}/>
+
                         <div className="message-body">{message.body}</div>
                       </div>
+
                     </div>
                   </li>
               );
@@ -75,13 +95,14 @@ import { fetchChannel } from '../../actions/channel_actions';
 import MessageInputContainer from '../message/message_input_container';
 
 
-const mapStateToProps = ({ entities, entities: { channels }, session }) => {
-  return ({currentChat: channels[session.selectedChannelId],
-  channels: Object.values(channels),
-  messages: entities.messages,
-  users: entities.users});
-  //need messages, bc upon change in messages, will rerender -> live;
-};
+const mapStateToProps = ({ entities, entities: { channels }, session }) => ({
+    currentUserId: session.id,
+    currentChat: channels[session.selectedChannelId],
+    channels: Object.values(channels),
+    messages: entities.messages,
+    users: entities.users
+    //need messages, bc upon change in messages, will rerender -> live;
+});
 
 const mapDispatchToProps = dispatch => ({
   receiveMessage: message => dispatch(receiveMessage(message)),
