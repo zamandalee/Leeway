@@ -1,5 +1,5 @@
 json.channel do
-  json.extract! @channel, :title, :id, :is_dm
+  json.extract! @channel, :title, :id, :is_dm, :user_ids
 end
 
 json.messages do

@@ -9,9 +9,10 @@ class Api::ChannelsController < ApplicationController
     # if dm, set title to a formatted string of users involved
     if @channel.is_dm
       users = []
-      @channel.users.map do |dmUser|
-        unless dmUser.id == current_user.id
-          users.push(dmUser.format_username)
+
+      params["channel"]["title"].values.map do |dmUser|
+        unless dmUser["user"]["id"] == current_user.id
+          users.push( User.find(dmUser["user"]["id"]).format_username )
         end
       end
       @channel.title = users.join(", ")
@@ -20,8 +21,8 @@ class Api::ChannelsController < ApplicationController
     if @channel.save
       #create permissions when that channel is created
       if @channel.is_dm
-        @channel.users.map do |dmUser|
-          Permission.create(user_id: dmUser.id, channel_id: @channel.id)
+        params["channel"]["title"].values.map do |dmUser|
+          Permission.create(user_id: dmUser["user"]["id"], channel_id: @channel.id)
         end
       else
         Permission.create(user_id: current_user.id, channel_id: @channel.id)
@@ -64,6 +65,6 @@ class Api::ChannelsController < ApplicationController
 
   private
   def channel_params
-    params.require(:channel).permit(:title, :private)
+    params.require(:channel).permit(:title, :private, :is_dm)
   end
 end

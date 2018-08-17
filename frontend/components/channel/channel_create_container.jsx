@@ -3,11 +3,14 @@ import { createChannel } from '../../actions/channel_actions';
 import { selectChannel } from '../../actions/session_actions';
 import ChannelForm from './channel_form';
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => {
+  console.log("CHANNELFORMSTATE", state);
+  return {
     title: '',
     private: false,
     formType: 'Create Channel'
-});
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {

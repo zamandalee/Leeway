@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SelectedUsersListItem from './selected_users_list_item';
 
 class DMForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchInput: "", users: [] };
+    this.state = { searchInput: "", selectedUsers: {[this.props.currentUserId]: { user: this.props.currentUser }} };
 
     this.update = this.update.bind(this);
     this.matches = this.matches.bind(this);
-    this.selectUser = this.selectUser.bind(this);
+    this.selectedSymbol = this.selectedSymbol.bind(this);
+    this.clickUsername = this.clickUsername.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.userSearch.focus();
+    this.props.fetchUsers();
+    this.props.fetchChannels();
   }
 
   update(e) {
@@ -22,48 +24,66 @@ class DMForm extends React.Component {
   }
 
   matches() {
-    const matches = [];
+    // const matches = [];
 
-    if( this.state.searchInput.length === 0) {
-      return this.props.users;
-    }
+    // if( this.state.searchInput.length === 0) {
+    //   return this.props.users;
+    // }
+    console.log("PROPS", this.props);
+    return (
+      Object.values(this.props.allUsers).map( (user, idx) => {
+        const sub = user.username.slice(0, this.state.searchInput.length);
 
-    this.props.users.map( (user) => {
-      const sub = user.username.slice(0, this.state.searchInput.length);
+        if( sub.toLowerCase() === this.state.searchInput.toLowerCase()) {
+          // matches.push(user);
 
-      if( sub.toLowerCase() === this.state.searchInput.toLowerCase()) {
-        matches.push(user);
+          return (
+            <li key={idx}>
+              <button className="matched-user"
+                onClick={this.clickUsername(user.id)}>
+                {user.username} {`${this.selectedSymbol(user.id)}`}
+              </button>
+            </li>
+          );
 
-        return (
-          <li>
-            <button className="matched-user"
-              onClick={this.selectName(user.id)}>
-              {user.username}
-            </button>
-          </li>
-        );
-      }
-    });
+        }
+      })
+    );
 
-    if( matches.length === 0) {
-      matches.push('No users match your search');
-    }
+    // if( matches.length === 0) {
+      // matches.push('No users match your search');
+    // }
   }
 
-  selectName(userId) {
-    return e => {
-      const username = e.target.innerText;
-      const user = this.props.allUsers[userId];
+  selectedSymbol(userId) {
+      //not selected
+      if( this.state.selectedUsers[userId] === undefined ) {
+        return "";
+      } else {
+        return "&times;";
+      }
+  }
 
-      let oldUsers = this.state.users;
-      oldUsers.push(user);
-      this.setState( {users: oldUsers} );
+  clickUsername(userId) {
+    return e => {
+      e.preventDefault();
+
+      const user = this.props.allUsers[userId];
+      let oldUsers = this.state.selectedUsers;
+
+      //not selected
+      if( this.state.selectedUsers[userId] === undefined ) {
+        oldUsers[userId] = {user};
+        this.setState( {selectedUsers: oldUsers} );
+      } else {
+        delete oldUsers[userId];
+      }
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createChannel(this.state.users).then( () => {
+    this.props.createChannel({ title: this.state.selectedUsers, is_dm: true }).then( () => {
       this.props.history.push('/workspace');
     });
   }
@@ -76,6 +96,7 @@ class DMForm extends React.Component {
         <h1 className="form-title">Create Direct Message</h1>
 
         <form className="channel-form" onSubmit={this.handleSubmit}>
+
           <input type="text"
                  className="user-search-input"
                  onChange={this.update}
@@ -85,7 +106,7 @@ class DMForm extends React.Component {
           </input>
 
           <ul className="user-matches-ul">
-            {this.matches}
+            {this.matches()}
           </ul>
 
           <div className="channel-form-buttons">
@@ -93,7 +114,7 @@ class DMForm extends React.Component {
 
             <button
               className="submit-button"
-              disabled={!!this.state.users}>
+              disabled={this.state.selectedUsers.length > 1}>
               Go
             </button>
           </div>
@@ -105,18 +126,25 @@ class DMForm extends React.Component {
 }
 
 import { connect } from 'react-redux';
-import { createChannel } from '../../actions/channel_actions';
+import { createChannel, fetchChannels } from '../../actions/channel_actions';
 import { selectChannel } from '../../actions/session_actions';
+import { fetchUsers } from '../../actions/user_actions';
 
-const mapStateToProps = ({ entities }) => ({
-  allUsers: entities.users
-});
+const mapStateToProps = ({ entities, session }) => {
+  return({
+    currentUserId: session.id,
+    currentUser: entities.users[session.id],
+    allUsers: entities.users
+  });
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     createChannel: payload => dispatch( createChannel(payload) ),
-    selectChannel: id => dispatch( selectChannel(id) )
+    selectChannel: id => dispatch( selectChannel(id) ),
+    fetchUsers: () => dispatch( fetchUsers() ),
+    fetchChannels: () => dispatch( fetchChannels() )
   };
 };
 
-export default connect(null,mapDispatchToProps)(DMForm);
+export default connect( mapStateToProps, mapDispatchToProps )(DMForm);

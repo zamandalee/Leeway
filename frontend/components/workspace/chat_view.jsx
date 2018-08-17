@@ -14,6 +14,8 @@ class ChatView extends React.Component {
 
   chatTitle() {
     const { channels, selectedChannelId } = this.props;
+    console.log(channels);
+    console.log(selectedChannelId);
 
     if(channels[selectedChannelId].is_dm) {
       return <div className="workspace-title">
