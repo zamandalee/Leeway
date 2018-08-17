@@ -1,7 +1,7 @@
-<p align="center">![Leeway](/app/assets/images/leewaylogo2.png)</p>
+<p align="center">![Leeway](./app/assets/images/leewaylogo2.png)</p>
 
 <h1 align="center">Leeway</h1>
-<p align="center">[Live Demo!](https://leewayapp.herokuapp.com/)</p>
+<a href="https://leewayapp.herokuapp.com/" align="center">Live Demo!</a>
 
 <!--  "actioncable": "^5.2.1", "react": "^16.4.2", "redux": "^4.0.0" "npm": "6.3.0"-->
 
@@ -13,7 +13,7 @@
 
 <p align="center">A Slack clone implemented using a Rails backend and React/Redux frontend framework. Users can create channels or direct messages to converse with a single person or multiple people.</p>
 
-<p align="center">![Leeway Features](/app/assets/images/leewayfeatures.png)</p>
+<p align="center">![Leeway Features](./app/assets/images/leewayfeatures.png)</p>
 
 ## Technologies
 - ActionCable
