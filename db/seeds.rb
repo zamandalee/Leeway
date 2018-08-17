@@ -86,7 +86,8 @@ channel7 = Channel.create(title: 'care-of-magical-creatures')
 dm1 = Channel.create(title: 'Hermione Granger, Ron Weasley, Rubeus Hagrid', is_dm: true)
 dm2 = Channel.create(title: 'Oliver Wood', is_dm: true)
 dm3 = Channel.create(title: 'Colin Creevey', is_dm: true)
-dm4 = Channel.create(title: 'Colin Creevey', is_dm: true)
+dm4 = Channel.create(title: 'Minerva McGonagall', is_dm: true)
+dm5 = Channel.create(title: 'Neville Longbottom', is_dm: true)
 
 
 Message.destroy_all
@@ -281,6 +282,13 @@ Message.create(body: 'You\'ll be meeting with me at 2pm on Friday', author_id: u
 Message.create(body: 'And try not to lose your temper at Dolores Umbridge in the meantime', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
 Message.create(body: 'Yes, Professor', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
 
+#Neville
+Message.create(body: 'Hey Harry', author_id: user4.id, messageable_type: "Channel", messageable_id: dm5.id)
+Message.create(body: 'Could you let me into the Common Room?', author_id: user4.id, messageable_type: "Channel", messageable_id: dm5.id)
+Message.create(body: 'I\'ve forgotten the password again...', author_id: user4.id, messageable_type: "Channel", messageable_id: dm5.id)
+Message.create(body: 'No problem Neville', author_id: user2.id, messageable_type: "Channel", messageable_id: dm5.id)
+Message.create(body: 'The password is tapeworm', author_id: user2.id, messageable_type: "Channel", messageable_id: dm5.id)
+Message.create(body: 'Oh! Thanks Harry', author_id: user4.id, messageable_type: "Channel", messageable_id: dm5.id)
 
 
 Permission.destroy_all
@@ -373,3 +381,9 @@ Permission.create(user_id: user10.id, channel_id: dm2.id)
 
 Permission.create(user_id: user2.id, channel_id: dm3.id)
 Permission.create(user_id: user16.id, channel_id: dm3.id)
+
+Permission.create(user_id: user2.id, channel_id: dm4.id)
+Permission.create(user_id: user7.id, channel_id: dm4.id)
+
+Permission.create(user_id: user2.id, channel_id: dm5.id)
+Permission.create(user_id: user4.id, channel_id: dm5.id)
