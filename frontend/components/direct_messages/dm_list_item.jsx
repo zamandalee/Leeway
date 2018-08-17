@@ -29,9 +29,9 @@ class DMListItem extends React.Component {
       <div className="channel-li" id={selected} onClick={this.handleClick}>
         <li>
           <button>
-            <div className="dm-user-num-square" id={`${selected}-dm-symbol`}>
+            <span className="dm-user-num-square" id={`${selected}-dm-symbol`}>
               {dm.user_ids.length - 1}
-            </div>
+            </span>
 
             {this.overflowTitle()}
           </button>

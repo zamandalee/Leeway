@@ -1,22 +1,22 @@
 .dm-user-num-square {
+  display: flex;
   max-height: 17px;
-  min-height: 15px;
   min-width: 15px;
-  max-width: 15px;
-
-  height: 100%;
-  width: 15px;
+  width: 17px;
 
   margin-right: 4px;
+  padding-top: 2px;
 
-  border-radius: 3px;
-  background: gray;
+  border-radius: 4px;
+  background: rgb(202,196,201);
   opacity: .7;
 
   font-size: 12px;
-  color: white;
+  font-weight: 400;
+  color: #4D394B;
   text-align: center;
-
+  align-items: center;
+  justify-content: center;
 }
 
 .create-dm-button {
