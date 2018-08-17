@@ -4,11 +4,20 @@ class DMListItem extends React.Component {
   constructor(props) {
     super(props);
 
+    this.overflowTitle = this.overflowTitle.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.props.selectChannel(this.props.dm.id);
+  }
+
+  overflowTitle() {
+    if( this.props.dm.title.length > 25 ) {
+      return <div className="chat-title">{this.props.dm.title.slice(0, 22).concat("...")}</div>;
+    } else {
+      return <div className="chat-title">{this.props.dm.title}</div>;
+    }
   }
 
 //REFACTOR CLASSNAMES TO BE "CHAT" EVERYTHING LATER
@@ -24,7 +33,7 @@ class DMListItem extends React.Component {
               {dm.user_ids.length - 1}
             </div>
 
-            <div className="chat-title">{dm.title}</div>
+            {this.overflowTitle()}
           </button>
         </li>
       </div>

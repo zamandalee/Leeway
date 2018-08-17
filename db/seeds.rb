@@ -86,6 +86,7 @@ channel7 = Channel.create(title: 'care-of-magical-creatures')
 dm1 = Channel.create(title: 'Hermione Granger, Ron Weasley, Rubeus Hagrid', is_dm: true)
 dm2 = Channel.create(title: 'Oliver Wood', is_dm: true)
 dm3 = Channel.create(title: 'Colin Creevey', is_dm: true)
+dm4 = Channel.create(title: 'Colin Creevey', is_dm: true)
 
 
 Message.destroy_all
@@ -209,6 +210,77 @@ Message.create(body: 'Alright, settle down', author_id: user12.id, messageable_t
 Message.create(body: 'What kind of surprise, Hagrid?', author_id: user1.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'Don\'t worry yourself about it now, but it\'s a good one!', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'Don\'t be late for class you lot, there\'s a lot to do tomorrow', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
+
+#DIRECT MESSAGES
+#Harry, Ron, Hermione, Hagrid
+Message.create(body: 'Hey you three', author_id: user12.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'Fancy coming down after lunch for some tea?', author_id: user12.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'I\'ve got something to show you!', author_id: user12.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'Sounds good, Hagrid!', author_id: user2.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'Yeah, definitely', author_id: user3.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'What do you want to show us??', author_id: user1.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'It better not be another monster spider...', author_id: user3.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'Don\'t worry, nothing like that', author_id: user12.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'Aragog\'s safely in his den at the mo, just checked in on him earlier today', author_id: user12.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'Oh gooooood', author_id: user2.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'Yes, wouldn\'t want anything to happen to it', author_id: user3.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'ANYWAY', author_id: user1.id, messageable_type: "Channel", messageable_id: dm1.id)
+Message.create(body: 'We\'ll see you tomorrow, Hagrid :)', author_id: user1.id, messageable_type: "Channel", messageable_id: dm1.id)
+
+
+#Oliver Wood
+Message.create(body: 'Hey Harry, have you ordered a new broom yet?', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'Nope', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'What?!', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'You best get a move on! The quidditch match against Slytherin is next Saturday! You can\'t ride a school broom... they\'re older than Dumbledore!', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'I got a Firebolt for Christmas', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'A FIREBOLT?', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'No wayyy', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'Really??', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'Yeah, but don\'t get your hopes up... McGonagall conviscated it :(', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'But she wants to win the Cup as much as we do!', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'She thinks the broom was sent by Sirius Black', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'He\'s supposed to be after me...', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'Sirius Black? How could the most wanted man in Britain walk into Quality Quidditch Supplies and buy a Firebolt?', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'Dunno, but McGonagall says that they have to strip it down before I can have it back', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'Strip it down?', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: '😨😨😨', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'Yeah, I know ☹️', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'I\'ll talk to her, Harry. I\'ll make her see sense.', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'A Firebolt... A real Firebolt on the team...', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'In the meantime, maybe order a Nimbus 2001. That\'s what Malfoy\'s got.', author_id: user10.id, messageable_type: "Channel", messageable_id: dm2.id)
+Message.create(body: 'I am not buying anything Malfoy thinks is good.', author_id: user2.id, messageable_type: "Channel", messageable_id: dm2.id)
+
+#Colin Creevey
+Message.create(body: 'Hiya Harry!!!', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'Alright, Harry?', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'My friends and I are heading down to the lake, Harry, wanna join?', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'Errr no Colin, thanks though', author_id: user2.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'I\'ve got to', author_id: user2.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'Do some work today... don\'t want to fall behind', author_id: user2.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'Oooh got it!', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'But you\'re the top of the class, right Harry, so you don\'t need to worry about that, right?', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'Well, come sit with us at dinner, then!', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'And maybe Dennis can take a picture of us, and you can sign it?', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+Message.create(body: 'So I can prove to everyone back home that I\'ve met you!', author_id: user16.id, messageable_type: "Channel", messageable_id: dm3.id)
+
+#McGonagall
+Message.create(body: 'Hi Professor', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'I was wondering if I could have my broom back?', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'Surely you\'ve done enough testing, and the match is in less than two weeks', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'No Potter, we\'ve not finished yet.', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'But', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'Potter! I shall let you know when you may have it back.', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'There\'s nothing wrong with it!!', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'I know it', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'There\'s no way you could know that', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'Professor Flitwick thinks that there may be a hurling hex on it', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: '😔', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'Quit moping, Potter, and prepare for your career consultation', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'You\'ll be meeting with me at 2pm on Friday', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'And try not to lose your temper at Dolores Umbridge in the meantime', author_id: user7.id, messageable_type: "Channel", messageable_id: dm4.id)
+Message.create(body: 'Yes, Professor', author_id: user2.id, messageable_type: "Channel", messageable_id: dm4.id)
+
 
 
 Permission.destroy_all

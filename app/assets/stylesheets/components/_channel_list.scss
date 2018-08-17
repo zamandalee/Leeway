@@ -8,6 +8,7 @@
   align-items: center;
   padding: 0px 15px;
   margin-top: 30px;
+  color: rgb(202,196,201);
 }
 
 .channel-sidebar h2 {
@@ -30,6 +31,7 @@
 }
 
 .channel-li {
+  font-size: 16px;
   padding: 0px 12px;
   cursor: pointer;
   max-height: 26px;
@@ -67,24 +69,4 @@
 .lock-title-symbol {
   font-size: 13px;
   opacity: 0.85;
-}
-
-//DM SPECIFIC
-.chat-title {
-  font-family: $lato;
-  font-size: 16px;
-}
-
-.dm-user-num-square {
-  margin-right: 2px;
-  font-size: 10px;
-  padding: 2px;
-  background: gray;
-  border-radius: 3px;
-}
-
-.create-dm-button {
-  position: absolute;
-  top: 352px;
-  left: 190px;
 }

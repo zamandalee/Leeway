@@ -86,6 +86,7 @@ class DMForm extends React.Component {
     });
   }
 
+
   //using same html classNames as the create channel form so styling is same
   render() {
     return (
