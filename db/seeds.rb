@@ -427,11 +427,6 @@ Permission.create(user_id: user15.id, channel_id: channel2.id)
 Permission.create(user_id: user16.id, channel_id: channel2.id)
 Permission.create(user_id: user17.id, channel_id: channel2.id)
 
-# trio
-Permission.create(user_id: user1.id, channel_id: channel3.id)
-Permission.create(user_id: user2.id, channel_id: channel3.id)
-Permission.create(user_id: user3.id, channel_id: channel3.id)
-
 # quidditch
 Permission.create(user_id: user2.id, channel_id: channel4.id)
 Permission.create(user_id: user3.id, channel_id: channel4.id)
@@ -480,7 +475,16 @@ Permission.create(user_id: user9.id, channel_id: channel7.id)
 Permission.create(user_id: user11.id, channel_id: channel7.id)
 Permission.create(user_id: user12.id, channel_id: channel7.id)
 
-
+#order of phoenix
+Permission.create(user_id: user1.id, channel_id: channel9.id)
+Permission.create(user_id: user2.id, channel_id: channel9.id)
+Permission.create(user_id: user3.id, channel_id: channel9.id)
+Permission.create(user_id: user6.id, channel_id: channel9.id)
+Permission.create(user_id: user7.id, channel_id: channel9.id)
+Permission.create(user_id: user8.id, channel_id: channel9.id)
+Permission.create(user_id: user9.id, channel_id: channel9.id)
+Permission.create(user_id: user11.id, channel_id: channel9.id)
+Permission.create(user_id: user17.id, channel_id: channel9.id)
 
 # DIRECT MESSAGES
 Permission.create(user_id: user1.id, channel_id: dm1.id)
@@ -506,21 +510,15 @@ Permission.create(user_id: user3.id, channel_id: dm6.id)
 Permission.create(user_id: user2.id, channel_id: dm7.id)
 Permission.create(user_id: user1.id, channel_id: dm7.id)
 
-#weasleys
+# trio
 Permission.create(user_id: user1.id, channel_id: dm8.id)
 Permission.create(user_id: user2.id, channel_id: dm8.id)
 Permission.create(user_id: user3.id, channel_id: dm8.id)
-Permission.create(user_id: user8.id, channel_id: dm8.id)
-Permission.create(user_id: user9.id, channel_id: dm8.id)
-Permission.create(user_id: user11.id, channel_id: dm8.id)
 
-#order of phoenix
+#weasleys
 Permission.create(user_id: user1.id, channel_id: dm9.id)
 Permission.create(user_id: user2.id, channel_id: dm9.id)
 Permission.create(user_id: user3.id, channel_id: dm9.id)
-Permission.create(user_id: user6.id, channel_id: dm9.id)
-Permission.create(user_id: user7.id, channel_id: dm9.id)
 Permission.create(user_id: user8.id, channel_id: dm9.id)
 Permission.create(user_id: user9.id, channel_id: dm9.id)
 Permission.create(user_id: user11.id, channel_id: dm9.id)
-Permission.create(user_id: user17.id, channel_id: dm9.id)

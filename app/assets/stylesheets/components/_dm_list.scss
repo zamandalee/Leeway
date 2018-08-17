@@ -1,3 +1,14 @@
+.dms-h2 {
+  font-weight: 400;
+  width: 180px;
+}
+
+.create-dm-button {
+  align-items: flex-end;
+  // padding-left: 60px;
+  box-sizing: border-box;
+}
+
 .dm-square-title-symbol, .dm-circle-title-symbol {
   display: flex;
   max-height: 14px;
@@ -25,15 +36,4 @@
 
 .dm-circle-title-symbol {
   font-size: 18px;
-}
-
-.dms-h2 {
-  font-weight: 400;
-  width: 180px;
-}
-
-.create-dm-button {
-  align-items: flex-end;
-  // padding-left: 60px;
-  box-sizing: border-box;
 }

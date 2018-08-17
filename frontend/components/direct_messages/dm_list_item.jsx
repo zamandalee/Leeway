@@ -34,7 +34,7 @@ class DMListItem extends React.Component {
 
   overflowTitle() {
     if( this.props.dm.title.length > 25 ) {
-      return <div className="chat-title">{this.props.dm.title.slice(0, 22).concat("...")}</div>;
+      return <div className="chat-title">{this.props.dm.title.slice(0, 21).concat("...")}</div>;
     } else {
       return <div className="chat-title">{this.props.dm.title}</div>;
     }
