@@ -12,9 +12,10 @@ class Api::ChannelsController < ApplicationController
 
       params["channel"]["title"].values.map do |dmUser|
         unless dmUser["user"]["id"] == current_user.id
-          users.push( User.find(dmUser["user"]["id"]).format_username )
+          users.push( User.find(dmUser["user"]["id"]).format_username[0...-1] )
         end
       end
+
       @channel.title = users.join(", ")
     end
 

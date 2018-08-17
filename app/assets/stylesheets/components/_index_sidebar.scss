@@ -10,6 +10,7 @@ $index-gray: #cac4c9;
   flex-direction: column;
   min-width: 220px;
   height: 100vh;
+  overflow: scroll;
   padding-top: 10px;
 
   background-color: $index-purple;

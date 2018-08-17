@@ -5,10 +5,9 @@ import ChannelListItem from './channel_list_item';
 class ChannelList extends React.Component {
 
   visibleChannels() {
-    //the the channels alphabetically
+    //sort the channels alphabetically
     let orderedChannels = Object.values(this.props.channels);
     orderedChannels = orderedChannels.sort( (a, b) => a.title > b.title );
-    // debugger;
 
     const usersChannels = orderedChannels.map( (channel, idx) => {
       if( !channel.is_dm ) {

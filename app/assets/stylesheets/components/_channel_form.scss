@@ -1,4 +1,4 @@
-.channel {
+.channel-create-container {
   display: flex;
   flex-direction: column;
 
@@ -23,11 +23,11 @@
   font-weight: bold;
 }
 
-.channel p {
+.channel-create-container p {
   margin-top: 10px;
   font-size: 15px;
-  font-weight: lighter;
-  color: #a0a0a0;
+  font-weight: 400;
+  color: #919193;
 }
 
 .channel-form h2 {

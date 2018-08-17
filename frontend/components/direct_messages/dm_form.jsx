@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class DMForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchInput: "", selectedUsers: {[this.props.currentUserId]: { user: this.props.currentUser }} };
+    this.state = { searchInput: "", selected: false, selectedUsers: {[this.props.currentUserId]: { user: this.props.currentUser }} };
 
     this.update = this.update.bind(this);
     this.matches = this.matches.bind(this);
@@ -24,43 +24,40 @@ class DMForm extends React.Component {
   }
 
   matches() {
-    // const matches = [];
 
-    // if( this.state.searchInput.length === 0) {
-    //   return this.props.users;
-    // }
-    console.log("PROPS", this.props);
+    // const selected = this.state.selected ? "user-select-x-button" : "";
+
     return (
       Object.values(this.props.allUsers).map( (user, idx) => {
         const sub = user.username.slice(0, this.state.searchInput.length);
+        // const symbol = this.state.selectedUsers[user.id] === undefined ? "" : "&times;";
 
-        if( sub.toLowerCase() === this.state.searchInput.toLowerCase()) {
-          // matches.push(user);
-
+        if( sub.toLowerCase() === this.state.searchInput.toLowerCase() && user.id !== this.props.currentUserId) {
           return (
             <li key={idx}>
-              <button className="matched-user"
-                onClick={this.clickUsername(user.id)}>
-                {user.username} {`${this.selectedSymbol(user.id)}`}
-              </button>
+              <div className="matched-user">
+                <div><img src={user.photoUrl}/></div>
+                <div>
+                  <button className="user-match-select"
+                    onClick={this.clickUsername(user.id)}>
+                    <div>{user.username}</div>
+                    {this.selectedSymbol(user.id)}
+                  </button>
+                </div>
+              </div>
             </li>
           );
-
         }
+
       })
     );
-
-    // if( matches.length === 0) {
-      // matches.push('No users match your search');
-    // }
   }
 
   selectedSymbol(userId) {
-      //not selected
       if( this.state.selectedUsers[userId] === undefined ) {
         return "";
       } else {
-        return "&times;";
+        return <div className="user-select-x-button">&times;</div>;
       }
   }
 
@@ -77,6 +74,7 @@ class DMForm extends React.Component {
         this.setState( {selectedUsers: oldUsers} );
       } else {
         delete oldUsers[userId];
+        // this.setState( {selected: false} );
       }
     };
   }
@@ -91,7 +89,7 @@ class DMForm extends React.Component {
   //using same html classNames as the create channel form so styling is same
   render() {
     return (
-      <div className="channel">
+      <div className="dm-create-container">
         <Link className="x-button" to="/workspace">&times;</Link>
         <h1 className="form-title">Create Direct Message</h1>
 
@@ -113,7 +111,7 @@ class DMForm extends React.Component {
             <Link className="cancel-button" to="/workspace">Cancel</Link>
 
             <button
-              className="submit-button"
+              className="dm-submit-button"
               disabled={this.state.selectedUsers.length > 1}>
               Go
             </button>

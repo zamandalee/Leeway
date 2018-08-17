@@ -30,7 +30,7 @@ class ChannelForm extends React.Component {
 
   render() {
     return (
-      <div className="channel">
+      <div className="channel-create-container">
         <Link className="x-button" to="/workspace">&times;</Link>
         <h1 className="form-title">{this.props.formType}</h1>
         <p>Channels are where your members communicate. They are best when organized around a topic — #leads, for example.</p>
