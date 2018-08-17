@@ -11,17 +11,9 @@ class Api::ChannelsController < ApplicationController
       users = []
 
       params["channel"]["title"].values.map do |dmUser|
-        puts "dmUser[user][id]---------------------------------------------"
-        puts dmUser["user"]["id"]
-        puts "current_user.id--------------------------------------------------"
-        puts current_user.id
-        puts "if condition--------------------------------------------------"
-        puts dmUser["user"]["id"] != current_user.id
         if dmUser["user"]["id"] != current_user.id
           users.push( User.find(dmUser["user"]["id"]).format_username[0...-1] )
         end
-        puts "users[]--------------------------------------------------"
-        puts users
       end
 
       @channel.title = users.join(", ")
