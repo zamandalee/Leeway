@@ -39,7 +39,8 @@ class DMForm extends React.Component {
                 <div><img src={user.photoUrl}/></div>
                 <div>
                   <button className="user-match-select"
-                    onClick={this.clickUsername(user.id)}>
+                    onClick={this.clickUsername(user.id)}
+                    disabled={Object.values(this.state.selectedUsers).length === 9}>
                     <div>{user.username}</div>
                     {this.selectedSymbol(user.id)}
                   </button>
@@ -119,7 +120,7 @@ class DMForm extends React.Component {
             <button
               onClick={this.testing}
               className="dm-submit-button"
-              disabled={!!this.state.selectedUsers}>
+              disabled={Object.values(this.state.selectedUsers).length < 2}>
               Go
             </button>
           </div>
