@@ -23,7 +23,7 @@ class ChannelList extends React.Component {
       <div className="channel-sidebar">
 
         <div className="channels-header">
-          <h2>Channels</h2>
+          <div className="channels-h2"><h2>Channels</h2></div>
           <Link className="create-channel-button" to="/channels/new">&oplus;</Link>
         </div>
 

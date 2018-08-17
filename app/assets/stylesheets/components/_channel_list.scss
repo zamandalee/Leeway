@@ -5,25 +5,28 @@
 
 .channels-header {
   display: flex;
+  flex-direction: row;
   align-items: center;
   padding: 0px 15px;
   margin-top: 30px;
   color: rgb(202,196,201);
+  max-height: 29px;
 }
 
-.channel-sidebar h2 {
+.channels-h2 {
   font-weight: 400;
+  width: 180px;
 }
 
 .create-dm-button, .create-channel-button {
-  position: absolute;
+  // position: absolute;
   font-size: 24px;
   opacity: .64;
 }
 
 .create-channel-button {
-  top: 114px;
-  left: 190px;
+  // top: 114px;
+  // left: 190px;
 }
 
 .create-channel-button:hover {

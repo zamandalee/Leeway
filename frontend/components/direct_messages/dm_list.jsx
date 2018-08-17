@@ -18,8 +18,13 @@ class DMList extends React.Component {
     return (
       <div className="channel-sidebar">
         <div className="channels-header">
-          <h2>Direct Messages</h2>
-          <Link className="create-dm-button" to="/directmessages/new">&oplus;</Link>
+          <div className="dms-h2"><h2>Direct Messages</h2></div>
+
+          <div>
+            <Link className="create-dm-button"
+                  to="/directmessages/new">&oplus;
+            </Link>
+          </div>
         </div>
 
         <div className="channel-ul">

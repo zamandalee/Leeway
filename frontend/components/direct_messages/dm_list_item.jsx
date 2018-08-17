@@ -5,11 +5,31 @@ class DMListItem extends React.Component {
     super(props);
 
     this.overflowTitle = this.overflowTitle.bind(this);
+    this.titleSymbol = this.titleSymbol.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.props.selectChannel(this.props.dm.id);
+  }
+
+  titleSymbol() {
+    const { dm, selectedChannelId } = this.props;
+    const selected = (dm.id === selectedChannelId ? "selected-channel" : "");
+
+    if( dm.user_ids.length > 2 ) {
+      return (
+        <span className="dm-square-title-symbol" id={`${selected}-dm-symbol`}>
+          {dm.user_ids.length - 1}
+        </span>
+      );
+    } else {
+      return (
+        <span className="dm-circle-title-symbol" id={`${selected}-dm-symbol`}>
+          &#x25CB;
+        </span>
+      );
+    }
   }
 
   overflowTitle() {
@@ -29,9 +49,7 @@ class DMListItem extends React.Component {
       <div className="channel-li" id={selected} onClick={this.handleClick}>
         <li>
           <button>
-            <span className="dm-user-num-square" id={`${selected}-dm-symbol`}>
-              {dm.user_ids.length - 1}
-            </span>
+            {this.titleSymbol()}
 
             {this.overflowTitle()}
           </button>
