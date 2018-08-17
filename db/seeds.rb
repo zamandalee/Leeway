@@ -72,6 +72,10 @@ user16 = User.create(username: 'colin_creevey', password: '123456')
   user16.photo.attach(io: File.open("app/assets/images/profpic16.png"), filename: 'profpic16.png')
   user16.save!
 
+user17 = User.create(username: 'severus_snape', password: '123456')
+  user17.photo.attach(io: File.open("app/assets/images/profpic17.png"), filename: 'profpic17.png')
+  user17.save!
+
 Channel.destroy_all
 
 channel1 = Channel.create(title: 'dumbledores-army', private: true)
@@ -81,13 +85,18 @@ channel4 = Channel.create(title: 'quidditch')
 channel5 = Channel.create(title: 'gryffindor-house', private: true)
 channel6 = Channel.create(title: 'transfiguration')
 channel7 = Channel.create(title: 'care-of-magical-creatures')
+channel8 = Channel.create(title: 'weasley-family', private: true)
+channel9 = Channel.create(title: 'order-of-the-phoenix-hq', private: true)
 
 # DM
-dm1 = Channel.create(title: 'Hermione Granger, Ron Weasley, Rubeus Hagrid', is_dm: true)
-dm2 = Channel.create(title: 'Oliver Wood', is_dm: true)
 dm3 = Channel.create(title: 'Colin Creevey', is_dm: true)
+# dm8 = Channel.create(title: 'Fred Weasley, George Weasley', is_dm: true)
+dm7 = Channel.create(title: 'Hermione Granger', is_dm: true)
+dm1 = Channel.create(title: 'Hermione Granger, Ron Weasley, Rubeus Hagrid', is_dm: true)
 dm4 = Channel.create(title: 'Minerva McGonagall', is_dm: true)
 dm5 = Channel.create(title: 'Neville Longbottom', is_dm: true)
+dm2 = Channel.create(title: 'Oliver Wood', is_dm: true)
+dm6 = Channel.create(title: 'Ron Weasley', is_dm: true)
 
 
 Message.destroy_all
@@ -212,6 +221,52 @@ Message.create(body: 'What kind of surprise, Hagrid?', author_id: user1.id, mess
 Message.create(body: 'Don\'t worry yourself about it now, but it\'s a good one!', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
 Message.create(body: 'Don\'t be late for class you lot, there\'s a lot to do tomorrow', author_id: user12.id, messageable_type: "Channel", messageable_id: channel7.id)
 
+# weasleys
+Message.create(body: 'Hey folks, mum just wrote', author_id: user8.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'She and dad are going to Egypt for Christmas to visit Bill', author_id: user8.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'They\'re abandoning us', author_id: user9.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'So we\'re all staying at school over the holidays?', author_id: user11.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Suppose so', author_id: user3.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Cool', author_id: user2.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Not so cool when you think about eating Christmas supper with Umbridge', author_id: user8.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: '😪', author_id: user11.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'We could always take the secret passage to Hogsmeade and spend Christmas Eve at the Three Broomsticks!', author_id: user2.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Harry!!', author_id: user1.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Whaaat', author_id: user2.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Harry! What an excellent idea', author_id: user8.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: '^^^', author_id: user3.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'We can\'t sneak into Hogsmeade!', author_id: user1.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'If Umbridge caught us, we\'ll all be expelled for sure', author_id: user1.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Not to mention how angry Mrs. Weasley would be', author_id: user1.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Hate to say it but', author_id: user3.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Mum angry is not something I love to see', author_id: user3.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'LOL remember that Howler she sent you for flying that car with Harry to school?', author_id: user11.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Vividly.', author_id: user3.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Ronniekins turned so red', author_id: user9.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Shut up', author_id: user3.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Oooh snappy retort', author_id: user9.id, messageable_type: "Channel", messageable_id: channel8.id)
+Message.create(body: 'Yeah I really don\'t know how you think of these, Ron', author_id: user8.id, messageable_type: "Channel", messageable_id: channel8.id)
+
+# channel9 = Channel.create(title: 'order-of-the-phoenix-hq')
+Message.create(body: 'The Weasley children, Harry, and Hermione are coming to HQ', author_id: user6.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'I\'ve already notified Sirius about the change in holiday plans', author_id: user6.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'What has happened?', author_id: user17.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'Arthur Weasley has been injured in his work for the Order', author_id: user6.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'Voldemort\'s snake attacked him at his post', author_id: user6.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'How do you know this?', author_id: user17.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'I saw it bite Mr. Weasley', author_id: user2.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'Potter', author_id: user17.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'What do you mean, you saw it?', author_id: user17.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'I had a sort of', author_id: user2.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'vision', author_id: user2.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'Explain yourself, Potter', author_id: user17.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'I will fill you in shortly, Severus', author_id: user7.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'I\'ve just given Umbridge an excuse of the students\' absence, I\'m on my way to your office now', author_id: user7.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'A reminder to all: do not send the address of headquarters through Leeway or owl post', author_id: user6.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'This channel should be secure, but most methods of communication are being monitored by Umbridge', author_id: user6.id, messageable_type: "Channel", messageable_id: channel9.id)
+Message.create(body: 'And we can\'t be too careful.', author_id: user6.id, messageable_type: "Channel", messageable_id: channel9.id)
+
+
 #DIRECT MESSAGES
 #Harry, Ron, Hermione, Hagrid
 Message.create(body: 'Hey you three', author_id: user12.id, messageable_type: "Channel", messageable_id: dm1.id)
@@ -290,6 +345,54 @@ Message.create(body: 'No problem Neville', author_id: user2.id, messageable_type
 Message.create(body: 'The password is tapeworm', author_id: user2.id, messageable_type: "Channel", messageable_id: dm5.id)
 Message.create(body: 'Oh! Thanks Harry', author_id: user4.id, messageable_type: "Channel", messageable_id: dm5.id)
 
+# Ron
+Message.create(body: 'Hey mate', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Have you seen my maroon pajamas?', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'I haven\'t seen them, no', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Also, at the DA meeting, which one was Michael Corner', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'The one who\'s dating Ginny?', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Yes😠', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'The dark haired one who partnered with her for Stunning spells', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'That was him??', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'He did a pathetic job', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'LOL would you rather him jinx your sister?', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Would be a good excuse to take him down', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Hahahah didn\'t you say you were going to take the news well', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Who\'s not take anything well??', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'I am taking it well!', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Okayyy Ron', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Listen, can I have a go on your broom later?', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Since Umbridge has my Firebolt locked in the dungeons', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Yeah definitely', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'I\'ve heard that she\'s gotten a security troll to guard it', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Wouldn\'t put it past her', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'How about after quidditch practice?', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'Excellent', author_id: user2.id, messageable_type: "Channel", messageable_id: dm6.id)
+Message.create(body: 'I\'m heading off now, I\'ll see you after', author_id: user3.id, messageable_type: "Channel", messageable_id: dm6.id)
+
+# dm7 = Channel.create(title: 'Hermione Granger', is_dm: true)
+Message.create(body: 'Harry, have you seen my copy of Numerology and Grammatica?', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Nope', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Ron may have borrowed it for some light reading', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: '🙄🙄🙄', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Let me know if you find it in the common room or anything', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Sure', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Found it! Crookshanks was sitting on it', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Nice!', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Since I\'ve been banned from the quidditch team by Umbdrige', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Do you want to head down to the lake to study while Ron\'s at quidditch practice?', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Sounds good!', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'I\'ve already finished my work, but I can help you with the History of Magic essay if you need', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Thanks Hermione, you\'re a lifesaver', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: '🙂', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'I\'ll bring some wool to knit more hats for the houseelves', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+
+Message.create(body: 'Hermione', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Where will you be over Christmas holiday?', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'I was planning to go skiing with my parents', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'But now that Mr. Weasley\'s injured...', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'I think Dumbledore will let me join you all at headquarters after school lets out', author_id: user1.id, messageable_type: "Channel", messageable_id: dm7.id)
+Message.create(body: 'Ok, see you soon then :)', author_id: user2.id, messageable_type: "Channel", messageable_id: dm7.id)
 
 Permission.destroy_all
 # CHANNELS
@@ -316,6 +419,11 @@ Permission.create(user_id: user9.id, channel_id: channel2.id)
 Permission.create(user_id: user10.id, channel_id: channel2.id)
 Permission.create(user_id: user11.id, channel_id: channel2.id)
 Permission.create(user_id: user12.id, channel_id: channel2.id)
+Permission.create(user_id: user13.id, channel_id: channel2.id)
+Permission.create(user_id: user14.id, channel_id: channel2.id)
+Permission.create(user_id: user15.id, channel_id: channel2.id)
+Permission.create(user_id: user16.id, channel_id: channel2.id)
+Permission.create(user_id: user17.id, channel_id: channel2.id)
 
 # trio
 Permission.create(user_id: user1.id, channel_id: channel3.id)
@@ -370,6 +478,26 @@ Permission.create(user_id: user9.id, channel_id: channel7.id)
 Permission.create(user_id: user11.id, channel_id: channel7.id)
 Permission.create(user_id: user12.id, channel_id: channel7.id)
 
+#weasleys
+Permission.create(user_id: user1.id, channel_id: channel8.id)
+Permission.create(user_id: user2.id, channel_id: channel8.id)
+Permission.create(user_id: user3.id, channel_id: channel8.id)
+Permission.create(user_id: user8.id, channel_id: channel8.id)
+Permission.create(user_id: user9.id, channel_id: channel8.id)
+Permission.create(user_id: user11.id, channel_id: channel8.id)
+
+#order of phoenix
+Permission.create(user_id: user1.id, channel_id: channel9.id)
+Permission.create(user_id: user2.id, channel_id: channel9.id)
+Permission.create(user_id: user3.id, channel_id: channel9.id)
+Permission.create(user_id: user6.id, channel_id: channel9.id)
+Permission.create(user_id: user7.id, channel_id: channel9.id)
+Permission.create(user_id: user8.id, channel_id: channel9.id)
+Permission.create(user_id: user9.id, channel_id: channel9.id)
+Permission.create(user_id: user11.id, channel_id: channel9.id)
+Permission.create(user_id: user17.id, channel_id: channel9.id)
+
+
 # DIRECT MESSAGES
 Permission.create(user_id: user1.id, channel_id: dm1.id)
 Permission.create(user_id: user2.id, channel_id: dm1.id)
@@ -387,3 +515,9 @@ Permission.create(user_id: user7.id, channel_id: dm4.id)
 
 Permission.create(user_id: user2.id, channel_id: dm5.id)
 Permission.create(user_id: user4.id, channel_id: dm5.id)
+
+Permission.create(user_id: user2.id, channel_id: dm6.id)
+Permission.create(user_id: user3.id, channel_id: dm6.id)
+
+Permission.create(user_id: user2.id, channel_id: dm7.id)
+Permission.create(user_id: user1.id, channel_id: dm7.id)
