@@ -4,7 +4,7 @@
 
   margin: auto;
   max-width: 630px;
-  padding: 80px 0;
+  padding: 40px 0;
   line-height: 2;
 
   font-family: $lato;
@@ -63,4 +63,8 @@
   padding: 3px 32px;
   background: #008951;
   color: white;
+}
+
+.dm-submit-button:disabled {
+  cursor: not-allowed;
 }

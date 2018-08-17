@@ -39,8 +39,7 @@ class DMForm extends React.Component {
                 <div><img src={user.photoUrl}/></div>
                 <div>
                   <button className="user-match-select"
-                    onClick={this.clickUsername(user.id)}
-                    disabled={Object.values(this.state.selectedUsers).length === 9}>
+                    onClick={this.clickUsername(user.id)}>
                     <div>{user.username}</div>
                     {this.selectedSymbol(user.id)}
                   </button>
@@ -87,10 +86,6 @@ class DMForm extends React.Component {
     });
   }
 
-  testing() {
-    console.log("clicked");
-  }
-
 
   //using same html classNames as the create channel form so styling is same
   render() {
@@ -118,9 +113,8 @@ class DMForm extends React.Component {
             <Link className="cancel-button" to="/workspace">Cancel</Link>
 
             <button
-              onClick={this.testing}
               className="dm-submit-button"
-              disabled={Object.values(this.state.selectedUsers).length < 2}>
+              disabled={Object.values(this.state.selectedUsers).length < 2 || Object.values(this.state.selectedUsers).length > 9}>
               Go
             </button>
           </div>
