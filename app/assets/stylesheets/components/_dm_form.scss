@@ -10,6 +10,13 @@
   font-family: $lato;
 }
 
+.dm-create-container p {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #919193;
+}
+
 .user-search-input {
   margin: 15px 0;
   width: calc(100% - 32px);

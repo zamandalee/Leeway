@@ -74,7 +74,7 @@ class DMForm extends React.Component {
         this.setState( {selectedUsers: oldUsers} );
       } else {
         delete oldUsers[userId];
-        // this.setState( {selected: false} );
+        this.setState( {selectedUsers: oldUsers} );
       }
     };
   }
@@ -86,6 +86,10 @@ class DMForm extends React.Component {
     });
   }
 
+  testing() {
+    console.log("clicked");
+  }
+
 
   //using same html classNames as the create channel form so styling is same
   render() {
@@ -93,6 +97,7 @@ class DMForm extends React.Component {
       <div className="dm-create-container">
         <Link className="x-button" to="/workspace">&times;</Link>
         <h1 className="form-title">Create Direct Message</h1>
+        <p>Note: group direct messages may have up to 9 total members.</p>
 
         <form className="channel-form" onSubmit={this.handleSubmit}>
 
@@ -112,8 +117,9 @@ class DMForm extends React.Component {
             <Link className="cancel-button" to="/workspace">Cancel</Link>
 
             <button
+              onClick={this.testing}
               className="dm-submit-button"
-              disabled={this.state.selectedUsers.length > 1}>
+              disabled={!!this.state.selectedUsers}>
               Go
             </button>
           </div>
