@@ -12,8 +12,7 @@ import SignupFormContainer from './session/signup_form_container';
 import SplashContent from './splash/splash_content';
 import Workspace from './workspace/workspace';
 import ChannelCreateContainer from './channel/channel_create_container';
-// import DMCreateContainer from './direct_messages/dm_create_container';
-// <ProtectedRoute path="/directmessages/new" component={DMCreateContainer} />
+import DMForm from './direct_messages/dm_form';
 
 const App = () => (
   <div>
@@ -22,6 +21,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/channels/new" component={ChannelCreateContainer} />
+      <ProtectedRoute path="/directmessages/new" component={DMForm} />
       <Route exact path="/" component={SplashContent} />
       <Redirect to="/" />
     </Switch>

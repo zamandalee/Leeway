@@ -15,14 +15,13 @@ class DMListItem extends React.Component {
   render() {
     const { dm, selectedChannelId } = this.props;
     const selected = (dm.id === selectedChannelId ? "selected-channel" : "");
-    console.log(dm.user_ids.length);
 
     return (
       <div className="channel-li" id={selected} onClick={this.handleClick}>
         <li>
           <button>
             <div className="dm-user-num-square" id={`${selected}-dm-symbol`}>
-              {dm.user_ids.length}
+              {dm.user_ids.length - 1}
             </div>
 
             <div className="chat-title">{dm.title}</div>

@@ -3,10 +3,6 @@
   font-size: 16px;
 }
 
-.channel-li {
-  padding: 0px 12px;
-}
-
 .channels-header {
   display: flex;
   align-items: center;
@@ -18,12 +14,15 @@
   font-weight: 400;
 }
 
-.create-channel-button {
+.create-dm-button, .create-channel-button {
   position: absolute;
-  top: 114px;
-  left: 190px;
   font-size: 24px;
   opacity: .64;
+}
+
+.create-channel-button {
+  top: 114px;
+  left: 190px;
 }
 
 .create-channel-button:hover {
@@ -31,6 +30,7 @@
 }
 
 .channel-li {
+  padding: 0px 12px;
   cursor: pointer;
   max-height: 26px;
   max-width: 200px;
@@ -67,4 +67,24 @@
 .lock-title-symbol {
   font-size: 13px;
   opacity: 0.85;
+}
+
+//DM SPECIFIC
+.chat-title {
+  font-family: $lato;
+  font-size: 16px;
+}
+
+.dm-user-num-square {
+  margin-right: 2px;
+  font-size: 10px;
+  padding: 2px;
+  background: gray;
+  border-radius: 3px;
+}
+
+.create-dm-button {
+  position: absolute;
+  top: 352px;
+  left: 190px;
 }
