@@ -27,7 +27,6 @@ class MessageFeed extends React.Component {
       },
       received: (data) => { //data passed from js/channels/messages.js.erb
         data.messageable_id = channelId;
-        console.log(data);
         this.props.receiveMessage(data);
       }
     });

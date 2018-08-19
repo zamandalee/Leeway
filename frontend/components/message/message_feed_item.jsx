@@ -1,14 +1,6 @@
 import React from 'react';
 import DeleteMessageButton from './delete_message_button';
 
-/* PROPS PASSED
-<MessageFeedItem
-  imgSrc={users[message.author_id].photoUrl}
-  currentUserId={currentUserId}
-  message={message}
-  key={idx}/>
-*/
-
 class MessageFeedItem extends React.Component {
   constructor(props) {
     super(props);

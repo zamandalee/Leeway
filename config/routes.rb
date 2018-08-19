@@ -10,10 +10,6 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :update, :destroy]
     end
 
-    resources :direct_messages, only: [:index, :show, :create, :destroy] do
-      resources :messages, only: [:create, :update, :destroy]
-    end
-
     resources :permissions, only: [:index]
   end
 
