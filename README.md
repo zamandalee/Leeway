@@ -35,7 +35,7 @@ Note: this project was designed and built within a two-week time frame, though I
 
 ### Live Chat
 
-<img src="./app/assets/images/demos/livemessagedemo.gif" width=700px/>
+<img src="./app/assets/images/demos/livemessagedemo.gif" width=800px/>
 
 Leeway utilizes ActionCable, a WebSocket framework for Rails, allowing open connections for real-time server communication.
 
@@ -77,7 +77,7 @@ end
 ```
 
 ### Channel and Direct Message Creation
-<img src="./app/assets/images/demos/dmcreationdemo.gif" width=600px/>
+<img src="./app/assets/images/demos/dmcreationdemo.gif" width=750px/>
 
 The direct message create form is more complex than that for channel, because it involves a user search.
 
@@ -106,7 +106,7 @@ After clicking the create button for either form, permissions to access that cha
 
 ### Message Editing and Deletion
 
-<img src="./app/assets/images/demos/messagecruddemo.gif" width=650px/>
+<img src="./app/assets/images/demos/messagecruddemo.gif" width=800px/>
 
 The edit and delete buttons for a message to be conditionally visible when the user hovers over the message. A check for if the current user is the author of the message is conducted:
 ```js
