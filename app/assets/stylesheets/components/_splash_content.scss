@@ -59,6 +59,11 @@ nav .get-started-button, .guest-login-button {
   font-size: 16px;
 }
 
+.workspace-button {
+  height: fit-content;
+  position: relative;
+}
+
 .login-button:hover, .logout-button:hover, .workspace-button:hover {
   color: $button-link-blue;
 }
