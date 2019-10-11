@@ -17,7 +17,7 @@
 <p align="center">A Slack clone implemented using a Rails backend and React/Redux frontend framework. Users can create channels or direct messages to converse with a single person or multiple people.</p>
 
 <p align="center"><img src="./app/assets/images/leewayfeatures.png"  width=650px/></p>
-Note: this project was designed and built within a two-week time frame, though I intent to add enhancements over time.
+Note: this project was designed and built within a two-week time frame, though I intend to add enhancements over time.
 
 ## Technologies
 - Websockets: ActionCable
