@@ -3,10 +3,6 @@
 <h1 align="center">Leeway</h1>
 
 <p align="center">
-  <a href="https://leewayapp.herokuapp.com/">Live Demo!</a>
-</p>
-
-<p align="center">
   <a href="#technologies">Technologies</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#project-design">Project Design</a> •
